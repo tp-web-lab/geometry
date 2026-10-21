@@ -1,0 +1,42 @@
+import "../code-editor/code-editor.js";
+import "../radio-list/radio-list.js";
+import "../textfield/textfield.js";
+import "../button/button.js";
+import "../callout/callout.js";
+import "../cluster/cluster.js";
+import "../stack/stack.js";
+import "../icon-button/icon-button.js";
+import "../dropdown/dropdown.js";
+/** Lazily loaded, instance-local editor for a declarative graph. */
+export declare class XYPlotSettings {
+    private readonly initialSource;
+    private readonly apply;
+    private readonly getLabel;
+    readonly element: HTMLElement;
+    readonly container: HTMLDivElement;
+    private readonly controls;
+    private readonly generated;
+    private readonly status;
+    private currentSource;
+    private sharedSyntax;
+    private curveSyntax;
+    private assignmentSyntax;
+    private saveTarget;
+    private fileBusy;
+    private readonly fileRequest;
+    private updating;
+    private timer;
+    private readonly sampleLimit;
+    constructor(initialSource: string, apply: (source: string) => void, getLabel?: () => string);
+    private field;
+    private radio;
+    initialize(source: string): void;
+    private setFields;
+    private syncKind;
+    private update;
+    private validate;
+    private applyDefinition;
+    private fileAction;
+    private report;
+    destroy(): void;
+}

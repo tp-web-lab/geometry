@@ -1,0 +1,1230 @@
+<style id="tp-md-references-styles" data-tp-markdown-style="tp-md-references-styles">
+.tp-md-reference-link {
+  position: relative;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.tp-md-note-ref-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tp-md-note-ref {
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.tp-md-note-ref .tp-md-reference-link {
+  text-decoration: none;
+}
+
+.tp-md-reference-tooltip {
+  position: fixed;
+  z-index: 1000;
+
+  display: none;
+
+  inline-size: max-content;
+  max-inline-size: min(32rem, calc(100vw - 2rem));
+  max-block-size: calc(100vh - 2rem);
+
+  overflow: auto;
+
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: normal;
+
+  background: Canvas;
+  color: CanvasText;
+
+  border: 1px solid
+    color-mix(in srgb, CanvasText 20%, transparent);
+
+  box-shadow:
+    0 0.5rem 1.5rem rgb(0 0 0 / 0.2);
+
+  white-space: normal;
+  overflow-wrap: break-word;
+
+  text-align: start;
+
+  pointer-events: none;
+}
+
+.tp-md-reference-tooltip[data-open='true'] {
+  display: block;
+}
+
+.tp-md-reference-link:hover .tp-md-reference-tooltip,
+.tp-md-reference-link:focus .tp-md-reference-tooltip,
+.tp-md-note-ref-wrap:hover > .tp-md-reference-tooltip,
+.tp-md-note-ref-wrap:focus-within > .tp-md-reference-tooltip,
+.tp-md-reference-tooltip[data-open='true'] {
+  display: block;
+}
+
+.tp-md-reference-tooltip p {
+  margin-block: 0.5rem;
+}
+
+.tp-md-reference-tooltip p:first-child {
+  margin-block-start: 0;
+}
+
+.tp-md-reference-tooltip p:last-child {
+  margin-block-end: 0;
+}
+
+.tp-md-bibliography,
+.tp-md-glossary,
+.tp-md-notes {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  align-items: start;
+}
+
+.tp-md-bibliography dt,
+.tp-md-glossary dt,
+.tp-md-notes dt,
+.tp-md-bibliography dd,
+.tp-md-glossary dd,
+.tp-md-notes dd {
+  margin: 0;
+}
+
+.tp-md-bibliography dt,
+.tp-md-glossary dt,
+.tp-md-notes dt {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tp-md-bibliography dd,
+.tp-md-glossary dd,
+.tp-md-notes dd {
+  min-inline-size: 0;
+}
+
+.tp-md-bibliography dd > :first-child,
+.tp-md-glossary dd > :first-child,
+.tp-md-notes dd > :first-child {
+  margin-block-start: 0;
+}
+
+.tp-md-bibliography dd > :last-child,
+.tp-md-glossary dd > :last-child,
+.tp-md-notes dd > :last-child {
+  margin-block-end: 0;
+}
+
+.tp-md-index dl {
+  margin: 0;
+}
+
+.tp-md-index dt {
+  font-weight: 600;
+}
+
+.tp-md-index dd {
+  margin-inline-start: 1.5rem;
+}
+
+.tp-md-index a {
+  text-decoration: none;
+}
+
+.tp-md-index-link {
+  position: relative;
+  font-weight: 400;
+}
+
+.tp-md-index-tooltip {
+  position: fixed;
+  z-index: 1000;
+  display: none;
+
+  inline-size: max-content;
+  max-inline-size: min(40rem, calc(100vw - 2rem));
+  max-block-size: calc(100vh - 2rem);
+
+  overflow: auto;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+  border-radius: 0.5rem;
+
+  background: Canvas;
+  color: CanvasText;
+
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.2);
+}
+
+.tp-md-index-tooltip[data-open='true'] {
+  display: block;
+}
+
+.tp-md-index-tooltip [data-tp-md-index-preview] {
+  max-block-size: 20rem;
+  overflow: hidden;
+}
+
+/* listof */
+.tp-md-listof {
+  margin-block: 1rem;
+}
+
+.tp-md-listof-list {
+  margin-block: 0;
+}
+
+.tp-md-listof-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.tp-md-listof-tooltip {
+  position: fixed;
+  z-index: 1000;
+  display: none;
+
+  inline-size: max-content;
+  max-inline-size: min(40rem, calc(100vw - 2rem));
+  max-block-size: calc(100vh - 2rem);
+
+  overflow: auto;
+  overscroll-behavior: contain;
+
+  padding: 0.75rem;
+  border: 1px solid
+    color-mix(in srgb, CanvasText 20%, transparent);
+  border-radius: 0.5rem;
+
+  background: Canvas;
+  color: CanvasText;
+
+  box-shadow:
+    0 0.5rem 1.5rem rgb(0 0 0 / 0.2);
+}
+
+.tp-md-listof-tooltip table {
+  max-inline-size: 100%;
+}
+
+.tp-md-listof-tooltip :is(table, pre, code) {
+  overflow: auto;
+}
+
+.tp-md-listof-tooltip[data-open='true'] {
+  display: block;
+}
+
+.tp-md-listof-tooltip [data-tp-md-listof-preview] {
+  max-block-size: 20rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.tp-md-listof-tooltip [data-tp-md-listof-preview]::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 3rem;
+  background: linear-gradient(transparent, Canvas);
+  pointer-events: none;
+}
+</style>
+<style id="tp-md-page-nav-styles" data-tp-markdown-style="tp-md-page-nav-styles">
+.tp-md-page-nav {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  gap: 1rem;
+  align-items: center;
+
+  margin-block-start: 3rem;
+  padding-block-start: 1rem;
+
+  border-block-start:
+    1px solid
+    color-mix(
+      in srgb,
+      CanvasText 15%,
+      transparent
+    );
+}
+
+.tp-md-page-nav a {
+  text-decoration: none;
+}
+
+.tp-md-page-nav-prev {
+  justify-self: start;
+}
+
+.tp-md-page-nav-top {
+  justify-self: center;
+}
+
+.tp-md-page-nav-next {
+  justify-self: end;
+  text-align: end;
+}
+
+.tp-md-page-nav-placeholder {
+  min-inline-size: 0;
+}
+</style>
+<style id="tp-md-toc-styles" data-tp-markdown-style="tp-md-toc-styles">
+details[data-markdown-toc] {
+  background: color-mix(in srgb, Canvas 94%, CanvasText 6%);
+  border: 1px solid color-mix(in srgb, CanvasText 12%, transparent);
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 20;
+}
+
+details[data-markdown-toc] ul {
+  margin-block: 0;
+}
+
+details[data-markdown-toc] li {
+  margin-block: 0.1rem;
+}
+
+details[data-markdown-toc] ul[data-toc-numbered] {
+  list-style: none;
+  padding-inline-start: 1rem;
+}
+
+details[data-markdown-toc] ul[data-toc-numbered] ul[data-toc-numbered] {
+  padding-inline-start: 1rem;
+}
+
+.tp-md-toc-aside[data-markdown-toc-position='end'] {
+  float: inline-end;
+  inline-size: min(18rem, 35%);
+  margin-inline-start: 1rem;
+  margin-block: 0 1rem;
+  border-left: none;
+  position: relative;
+  z-index: 20;
+}
+
+.tp-md-toc-aside[data-markdown-toc-position='end'] details[data-markdown-toc] {
+  position: sticky;
+  inset-block-start: 1rem;
+  z-index: 20;
+}
+
+.tp-md-toc-aside[data-markdown-toc-position='end'] details[data-markdown-toc][open] {
+  z-index: 100;
+}
+
+@media (max-width: 60rem) {
+  .tp-md-toc-aside[data-markdown-toc-position='end'] {
+    float: none;
+    inline-size: auto;
+    margin-inline-start: 0;
+  }
+
+  .tp-md-toc-aside[data-markdown-toc-position='end'] details[data-markdown-toc] {
+    position: static;
+  }
+}
+</style>
+<style id="tp-md-layout-styles" data-tp-markdown-style="tp-md-layout-styles">
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--layout-space, 0.5rem);
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--layout-space, 0.5rem);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-space, 0.5rem);
+  justify-content: var(--cluster-justify, flex-start);
+  align-items: var(--cluster-align, center);
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-space, 0.5rem);
+  --switcher-limit: attr(limit number, 2);
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 40rem) - 100%) * 999);
+}
+
+
+.switcher > tp-l-system {
+  flex: 1 1 18rem;
+  min-inline-size: 0;
+}
+
+.switcher > tp-l-system .tp-l-system-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* important */
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  inline-size: 100%;
+}
+
+.switcher > tp-l-system .tp-l-system-svg,
+.switcher > tp-l-system svg {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+
+.switcher.feature-list > article {
+  flex: 0 0 250px;
+}
+.switcher.code-list > article {
+  flex: 0 0 400px;
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--layout-space, 0.5rem);
+}
+
+.sidebar > :first-child {
+  flex-basis: var(--sidebar-width, 10rem);
+  flex-grow: 1;
+}
+
+.sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content-min, 70%);
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: var(--cover-min-block-size, 100vh);
+  padding: var(--cover-padding, 1rem);
+}
+
+.cover > * {
+  margin-block: var(--layout-space, 0.5rem);
+}
+
+.cover > :first-child:not(.centered) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(.centered) {
+  margin-block-end: 0;
+}
+
+.cover > .centered {
+  margin-block: auto;
+}
+
+.center {
+  box-sizing: content-box;
+  max-inline-size: var(--center-max-inline-size, 60rem);
+  margin-inline: auto;
+  padding-inline: var(--center-padding, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--layout-space, 0.5rem);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--grid-min, 16rem), 100%), 1fr)
+  );
+}
+
+.reel {
+  display: flex;
+  gap: var(--layout-space, 0.5rem);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: currentColor transparent;
+}
+
+.reel > * {
+  flex: 0 0 var(--reel-item-width, auto);
+}
+
+.reel > img {
+  block-size: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+.reel > * + * {
+  margin-inline-start: 1rem;
+}
+
+.reel.overflowing {
+  padding-block-end: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-space, 0.5rem);
+  padding: var(--card-padding, 1rem);
+  border: var(--card-border, 1px solid color-mix(in srgb, CanvasText 18%, transparent));
+  border-radius: var(--card-radius, 0.75rem);
+  background: var(--card-background, Canvas);
+  color: var(--card-color, CanvasText);
+}
+
+.card > :first-child {
+  margin-block-start: 0;
+}
+
+.card > :last-child {
+  margin-block-end: 0;
+}
+</style>
+<style id="tp-md-tables-styles" data-tp-markdown-style="tp-md-tables-styles">
+.tp-md-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  margin-block: 1rem;
+}
+
+.tp-md-table th,
+.tp-md-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+  text-align: start;
+  vertical-align: top;
+}
+
+.tp-md-table th {
+  font-weight: 700;
+  background: color-mix(in srgb, CanvasText 8%, Canvas);
+}
+
+.tp-md-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, CanvasText 4%, Canvas);
+}
+
+.tp-md-table td.tp-md-table-number {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.tp-md-block-table :where(th, td) > :first-child,
+.tp-md-list-table :where(th, td) > :first-child,
+.tp-md-table :where(td, th) > :first-child {
+  margin-block-start: 0;
+}
+
+.tp-md-block-table :where(th, td) > :last-child,
+.tp-md-list-table :where(th, td) > :last-child,
+.tp-md-table :where(td, th) > :last-child {
+  margin-block-end: 0;
+}
+
+.tp-md-table :where(td, th) :where(ul, ol) {
+  padding-inline-start: 1.5rem;
+  margin-block: 0.5rem;
+}
+
+.tp-md-table :where(td, th) :where(ul, ol) :where(ul, ol) {
+  margin-block: 0.25rem;
+}
+
+table.tp-md-table.tp-md-list-table td ul,
+table.tp-md-table.tp-md-list-table td ol,
+table.tp-md-table.tp-md-list-table th ul,
+table.tp-md-table.tp-md-list-table th ol {
+  list-style-position: outside;
+  padding-inline-start: 2rem;
+  margin-inline-start: 0;
+}
+
+table.tp-md-table.tp-md-list-table td li,
+table.tp-md-table.tp-md-list-table th li {
+  display: list-item;
+  margin-inline-start: 0;
+}
+
+table.tp-md-table.tp-md-list-table td,
+table.tp-md-table.tp-md-list-table th {
+  overflow: visible;
+}
+</style>
+<style id="tp-md-mdviewer-styles" data-tp-markdown-style="tp-md-mdviewer-styles">
+.tp-md-mdviewer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  margin-block: 1rem;
+  overflow: visible;
+}
+
+.tp-md-mdviewer-toolbar {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: end;
+  margin-block-end: 0;
+}
+
+.tp-md-mdviewer-toolbar label,
+.tp-md-mdviewer-start-controls label {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+}
+
+.tp-md-mdviewer-toolbar select,
+.tp-md-mdviewer-start-controls select {
+  width: 100%;
+  height: 2.25rem;
+  box-sizing: border-box;
+}
+
+.tp-md-mdviewer-start,
+.tp-md-mdviewer-end,
+.tp-md-mdviewer-source-output,
+.tp-md-mdviewer-output {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.tp-md-mdviewer-start {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  border: 1px solid #d0d7de;
+  border-radius: 0.75rem;
+  background: #fff;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.tp-md-mdviewer-start-controls:empty {
+  display: none;
+}
+
+.tp-md-mdviewer-end {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  border: 1px solid #d0d7de;
+  border-radius: 0.75rem;
+  background: #fff;
+  overflow: hidden;
+  padding: 0.5rem;
+  & section {
+    margin: 0;
+  }
+}
+
+.tp-md-mdviewer pre {
+  max-inline-size: 100%;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  border-radius: 0.75rem;
+}
+
+.tp-md-mdviewer pre,
+.tp-md-mdviewer code {
+  white-space: pre;
+}
+
+.tp-md-mdviewer pre code {
+  display: block;
+  min-inline-size: max-content;
+  white-space: inherit;
+}
+
+.tp-md-mdviewer-output > pre,
+.tp-md-mdviewer-output pre {
+  max-block-size: none;
+  block-size: auto;
+  height: auto;
+}
+
+.tp-md-mdviewer[data-mdviewer-layout='source'] {
+  grid-template-columns: 1fr;
+}
+
+.tp-md-mdviewer[data-mdviewer-layout='source'] .tp-md-mdviewer-end {
+  display: none;
+}
+
+.tp-md-mdviewer[data-mdviewer-layout='output'] {
+  grid-template-columns: 1fr;
+}
+
+.tp-md-mdviewer[data-mdviewer-layout='output'] .tp-md-mdviewer-start {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .tp-md-mdviewer {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-md-mdviewer-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<style id="tp-md-example-styles" data-tp-markdown-style="tp-md-example-styles">
+.tp-md-example {
+  display: block;
+
+  margin-block: 1rem;
+  padding: 1rem;
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      CanvasText 18%,
+      transparent
+    );
+
+  border-radius: 0.75rem;
+
+  background:
+    color-mix(
+      in srgb,
+      CanvasText 6%,
+      Canvas
+    );
+}
+
+.tp-md-example-label {
+  margin-block-end: 0.75rem;
+
+  color:
+    color-mix(
+      in srgb,
+      CanvasText 75%,
+      transparent
+    );
+
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.tp-md-example-content > :first-child {
+  margin-block-start: 0;
+}
+
+.tp-md-example-content > :last-child {
+  margin-block-end: 0;
+}
+</style>
+<style id="tp-md-tabs-styles" data-tp-markdown-style="tp-md-tabs-styles">
+.tp-md-tabs {
+  --tp-md-tabs-border-color: var(--tp-tabs-border-color, var(--tp-neutral-stroke-soft));
+  --tp-md-tabs-border-selected-color: var(--tp-tabs-border-selected-color, var(--tp-brand-stroke-soft));
+  --tp-md-tabs-tab-bg: var(--tp-tabs-tab-bg, var(--tp-neutral-fill-softer));
+  --tp-md-tabs-tab-color: var(--tp-tabs-tab-color, var(--tp-text-body));
+  --tp-md-tabs-tab-selected-bg: var(--tp-tabs-tab-selected-bg, var(--tp-paper-color));
+  --tp-md-tabs-tab-selected-color: var(--tp-tabs-tab-selected-color, var(--tp-brand-seed));
+  --tp-md-tabs-panel-bg: var(--tp-tabs-panel-bg, var(--tp-paper-color));
+  display: block;
+  margin-block: 1rem;
+  min-inline-size: 0;
+  width: 100%;
+}
+
+.tp-md-tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  min-inline-size: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tp-md-tabs-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-inline-size: 0;
+  min-block-size: 0;
+  margin: 0;
+  margin-inline-end: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--tp-md-tabs-border-color);
+  border-block-end: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background: var(--tp-md-tabs-tab-bg);
+  color: var(--tp-md-tabs-tab-color);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tp-md-tabs-tab:last-child {
+  margin-inline-end: 0;
+}
+
+.tp-md-tabs-tab[aria-selected='true'] {
+  border-color: var(--tp-md-tabs-border-selected-color);
+  background: var(--tp-md-tabs-tab-selected-bg);
+  color: var(--tp-md-tabs-tab-selected-color);
+  font-weight: 600;
+}
+
+.tp-md-tabs-panel {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--tp-md-tabs-border-color);
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: var(--tp-md-tabs-panel-bg);
+}
+
+.tp-md-tabs-panel[hidden] {
+  display: none;
+}
+</style>
+<style id="tp-md-lists-styles" data-tp-markdown-style="tp-md-lists-styles">ul .tp-md-choice-list-item{list-style:none}.tp-md-choice-list-label{vertical-align:middle;align-items:center;gap:.5rem;line-height:1.4;display:inline-flex}.tp-md-choice-list-input{vertical-align:middle;flex:none;block-size:1rem;inline-size:1rem;margin:0}input[type=checkbox],input[type=radio]{transform-origin:50%;transform:scale(1.4)}.tp-md-list{margin:.5rem 0;padding-left:2.5rem}.tp-md-list-lower-alpha{list-style-type:lower-alpha}.tp-md-list-upper-alpha{list-style-type:upper-alpha}.tp-md-list-lower-roman{list-style-type:lower-roman}.tp-md-list-upper-roman{list-style-type:upper-roman}</style>
+<style id="tp-md-htmlviewer-styles" data-tp-markdown-style="tp-md-htmlviewer-styles">
+.tp-htmlviewer {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin: 1rem 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.tp-htmlviewer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  align-items: start;
+  justify-items: stretch;
+  overflow: visible;
+}
+
+.tp-htmlviewer-panel {
+  position: relative;
+  min-inline-size: 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid var(--tp-neutral-stroke-soft);
+  border-radius: .75rem;
+  background: var(--tp-paper-color);
+  overflow: hidden;
+}
+
+.tp-htmlviewer-panel-code,
+.tp-htmlviewer-panel-preview {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.tp-htmlviewer-controls {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--tp-neutral-stroke-soft);
+}
+
+.tp-htmlviewer-controls label {
+  display: grid;
+  gap: 0.15rem;
+  margin-bottom: 0;
+}
+
+.tp-htmlviewer-controls select {
+  inline-size: 100%;
+  block-size: 2.5rem;
+  box-sizing: border-box;
+}
+
+.tp-htmlviewer-toolbar {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  z-index: 3;
+  display: flex;
+  gap: .375rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.tp-htmlviewer-copy-btn {
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  min-inline-size: 1.75rem;
+  min-block-size: 1.75rem;
+  padding: 0;
+  border-radius: .5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tp-neutral-on-paper-color, currentColor);
+  backdrop-filter: blur(2px);
+  opacity: .95;
+}
+
+.tp-htmlviewer-copy-btn svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+}
+
+.tp-htmlviewer-source-output,
+.tp-htmlviewer-output {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.tp-htmlviewer-source-output {
+  position: relative;
+}
+
+.tp-htmlviewer-source-output pre,
+.tp-htmlviewer-output pre {
+  max-inline-size: 100%;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+  border-radius: 0.75rem;
+}
+
+.tp-htmlviewer-source-output pre code,
+.tp-htmlviewer-output pre code {
+  display: block;
+  min-inline-size: max-content;
+  white-space: pre;
+}
+
+.tp-htmlviewer-frame {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-block-size: 0;
+  border: 0;
+  background: var(--tp-paper-color);
+  border-radius: inherit;
+}
+
+.tp-htmlviewer-grid[data-htmlviewer-layout='source'] {
+  grid-template-columns: 1fr;
+}
+
+.tp-htmlviewer-grid[data-htmlviewer-layout='source'] .tp-htmlviewer-panel-preview {
+  display: none;
+}
+
+.tp-htmlviewer-grid[data-htmlviewer-layout='output'] {
+  grid-template-columns: 1fr;
+}
+
+.tp-htmlviewer-grid[data-htmlviewer-layout='output'] .tp-htmlviewer-source-output {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .tp-htmlviewer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<h1 id="interm%C3%A8de" tabindex="-1">Intermède</h1>
+<details>
+  <summary>
+  <p>Connaissez-vous le tangram ?</p>
+
+  </summary>
+  <p>Le tangram est une sorte de puzzle d’origine chinoise.
+Il se compose de 7 pièces polygonales :</p>
+<ul data-choice-list="tp-md-choice-list-1">
+<li>
+<p>5 triangles rectangles isocèles : 2 petits de surface 1, un moyen de surface 2 et 2 grands de surface 4;</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.85 5" width="554" height="172" role="img" aria-labelledby="tangram-triangles" style="display: block; max-width: 100%; height: auto; margin: 0.75rem 0;" stroke="#fff" stroke-width="0.035" stroke-linejoin="round">
+  <title id="tangram-triangles">Les cinq triangles du tangram, représentés à la même échelle</title>
+  <polygon points="1.15,2.15 1.15,4.15 0.15,3.15" fill="#648237"><title>Petit triangle de surface 1</title></polygon>
+  <polygon points="2.75,3.15 3.75,4.15 1.75,4.15" fill="#925599"><title>Petit triangle de surface 1</title></polygon>
+  <polygon points="6.35,2.15 6.35,4.15 4.35,4.15" fill="#ba7b15"><title>Triangle moyen de surface 2</title></polygon>
+  <polygon points="6.95,2.15 10.95,2.15 8.95,4.15" fill="#b84432"><title>Grand triangle de surface 4</title></polygon>
+  <polygon points="11.55,0.15 13.55,2.15 11.55,4.15" fill="#246c94"><title>Grand triangle de surface 4</title></polygon>
+</svg>
+</li>
+<li>
+<p>1 carré de surface 2;</p>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.45 2.3" width="98" height="92" role="img" aria-labelledby="tangram-carre" style="display: block; max-width: 100%; height: auto; margin: 0.75rem 0;" stroke="#fff" stroke-width="0.035" stroke-linejoin="round">
+    <title id="tangram-carre">Le carré du tangram, de surface 2</title>
+    <polygon points="0.15,1.15 1.15,0.15 2.15,1.15 1.15,2.15" fill="#187f7c"><title>Carré de surface 2</title></polygon>
+  </svg>
+</li>
+<li>
+<p>1 parallélogramme (ni rectangle, ni losange) de surface 2.</p>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3.45 1.3" width="138" height="52" role="img" aria-labelledby="tangram-parallelogramme" style="display: block; max-width: 100%; height: auto; margin: 0.75rem 0;" stroke="#fff" stroke-width="0.035" stroke-linejoin="round">
+    <title id="tangram-parallelogramme">Le parallélogramme du tangram, de surface 2</title>
+    <polygon points="0.15,1.15 2.15,1.15 3.15,0.15 1.15,0.15" fill="#b94574"><title>Parallélogramme de surface 2</title></polygon>
+  </svg>
+</li>
+</ul>
+<p>Les rapports de surface entre les différentes pièces sont illustrés ci-dessous.
+Chaque triangle délimité par les traits blancs a une surface de 1 et peut se superposer à l’un des petits triangles, après déplacement ou rotation. Toutes les pièces sont représentées à la même échelle.</p>
+<tp-include src="https://tp-web-lab.github.io/geometry/docs/interlude/images/surfaces.html"></tp-include>
+<p>Ces 7 pièces forment une dissection d’un carré de surface 16.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.15 -0.15 4.3 4.3" width="172" height="172" role="img" aria-labelledby="tangram-dissection" style="display: block; max-width: 100%; height: auto; margin: 0.75rem 0;" stroke="#fff" stroke-width="0.035" stroke-linejoin="round">
+  <title id="tangram-dissection">Les sept pièces du tangram assemblées en un carré de surface 16</title>
+  <polygon points="0,0 4,0 2,2" fill="#b84432"><title>Grand triangle de surface 4</title></polygon>
+  <polygon points="0,0 2,2 0,4" fill="#246c94"><title>Grand triangle de surface 4</title></polygon>
+  <polygon points="4,2 4,4 2,4" fill="#ba7b15"><title>Triangle moyen de surface 2</title></polygon>
+  <polygon points="4,0 4,2 3,1" fill="#648237"><title>Petit triangle de surface 1</title></polygon>
+  <polygon points="2,2 3,3 1,3" fill="#925599"><title>Petit triangle de surface 1</title></polygon>
+  <polygon points="2,2 3,1 4,2 3,3" fill="#187f7c"><title>Carré de surface 2</title></polygon>
+  <polygon points="0,4 2,4 3,3 1,3" fill="#b94574"><title>Parallélogramme de surface 2</title></polygon>
+</svg>
+<p>Il n’y a d’ailleurs que 13 polygones convexes réalisables avec le tangram.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 590" role="img" aria-labelledby="title"><title id="title">The thirteen convex tangrams in reference-image order</title><rect width="750" height="590" fill="#faf9f5"></rect>
+<polygon points="20,37.5 47.5,37.5 47.5,65" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="47.5,37.5 75,37.5 75,65 47.5,65" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="75,37.5 102.5,37.5 75,65" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="75,65 102.5,37.5 130,37.5 102.5,65" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="20,37.5 75,92.5 20,92.5" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="47.5,65 102.5,65 75,92.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="20,92.5 75,92.5 20,147.5" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<text x="75" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">01</text>
+<polygon points="206.667,37.5 280,37.5 280,110.833" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,74.1667 206.667,37.5 206.667,74.1667" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="206.667,37.5 280,110.833 206.667,110.833" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,74.1667 206.667,74.1667 206.667,110.833 170,110.833" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,110.833 243.333,110.833 206.667,147.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="206.667,147.5 243.333,110.833 280,110.833 243.333,147.5" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,110.833 206.667,147.5 170,147.5" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<text x="225" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">02</text>
+<polygon points="350.833,68.3333 399.167,20 399.167,68.3333" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="350.833,68.3333 375,68.3333 375,92.5 350.833,92.5" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,68.3333 399.167,68.3333 399.167,92.5" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,68.3333 399.167,92.5 399.167,116.667 375,92.5" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="350.833,92.5 375,92.5 350.833,116.667" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="399.167,116.667 350.833,116.667 375,92.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="350.833,116.667 399.167,116.667 399.167,165" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<text x="375" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">03</text>
+<polygon points="500.833,20 525,44.1667 500.833,44.1667" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="500.833,44.1667 525,44.1667 525,68.3333 500.833,68.3333" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="525,44.1667 549.167,68.3333 525,92.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="500.833,68.3333 525,68.3333 500.833,92.5" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="500.833,92.5 525,68.3333 525,92.5 500.833,116.667" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="500.833,116.667 549.167,68.3333 549.167,116.667" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="500.833,116.667 549.167,116.667 549.167,165" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<text x="525" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">04</text>
+<polygon points="646,20 704,20 704,78" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="646,20 675,49 646,49" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="646,49 675,49 675,78 646,78" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="675,49 704,78 704,107 675,78" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="646,78 675,78 646,107" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="704,107 646,107 675,78" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="646,107 704,107 704,165" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<text x="675" y="185" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">05</text>
+<polygon points="31.5,244 60.5,215 60.5,244" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="60.5,215 118.5,273 60.5,273" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="31.5,244 60.5,244 60.5,273 31.5,273" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="31.5,273 60.5,273 60.5,302" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="60.5,273 118.5,273 60.5,331" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="31.5,273 60.5,302 60.5,331 31.5,302" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="31.5,302 60.5,331 31.5,360" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<text x="75" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">06</text>
+<polygon points="170,287.5 225,232.5 225,287.5" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="225,232.5 252.5,260 225,260" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="225,260 252.5,260 252.5,287.5 225,287.5" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="252.5,260 280,287.5 252.5,315" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,287.5 225,287.5 225,342.5" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="225,287.5 252.5,287.5 225,315" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="225,315 252.5,287.5 252.5,315 225,342.5" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<text x="225" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">07</text>
+<polygon points="404,244 346,244 375,215" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="346,244 404,244 404,302" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="346,244 404,302 346,302" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="346,302 375,302 375,331 346,331" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,302 404,302 375,331" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,331 404,302 404,331 375,360" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,360 346,331 375,331" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<text x="375" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">08</text>
+<polygon points="470,260 525,260 525,315" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="525,260 552.5,260 552.5,287.5 525,287.5" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="552.5,260 580,260 580,287.5" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="470,260 525,315 470,315" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="552.5,260 580,287.5 580,315 552.5,287.5" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="525,287.5 552.5,287.5 525,315" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="580,315 525,315 552.5,287.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<text x="525" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">09</text>
+<polygon points="689.5,244 631.5,244 660.5,215" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="631.5,244 689.5,244 689.5,302" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="631.5,244 660.5,273 660.5,302 631.5,273" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="689.5,244 718.5,273 689.5,273" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="689.5,273 718.5,273 718.5,302 689.5,302" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="660.5,273 689.5,302 660.5,302" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<polygon points="660.5,302 718.5,302 718.5,360" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<text x="675" y="380" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">10</text>
+<polygon points="102.5,468.75 47.5,468.75 75,441.25" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="47.5,468.75 102.5,468.75 102.5,523.75" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="20,496.25 47.5,468.75 47.5,496.25" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="47.5,468.75 102.5,523.75 47.5,523.75" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="102.5,468.75 130,496.25 130,523.75 102.5,496.25" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="20,496.25 47.5,496.25 47.5,523.75 20,523.75" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="102.5,496.25 130,523.75 102.5,523.75" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<text x="75" y="575" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">11</text>
+<polygon points="206.667,427.5 243.333,427.5 243.333,464.167 206.667,464.167" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,464.167 206.667,427.5 206.667,464.167" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="243.333,427.5 280,464.167 280,500.833 243.333,464.167" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,464.167 243.333,464.167 243.333,537.5" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="170,464.167 243.333,537.5 170,537.5" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="243.333,464.167 280,500.833 243.333,537.5" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="243.333,537.5 280,500.833 280,537.5" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<text x="225" y="575" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">12</text>
+<polygon points="375,441.25 430,441.25 375,496.25" fill="#b84432" stroke="white" stroke-width="1"></polygon>
+<polygon points="320,496.25 375,441.25 375,496.25" fill="#246c94" stroke="white" stroke-width="1"></polygon>
+<polygon points="402.5,468.75 430,441.25 430,468.75 402.5,496.25" fill="#b94574" stroke="white" stroke-width="1"></polygon>
+<polygon points="375,496.25 402.5,468.75 402.5,496.25" fill="#648237" stroke="white" stroke-width="1"></polygon>
+<polygon points="320,496.25 347.5,496.25 347.5,523.75 320,523.75" fill="#187f7c" stroke="white" stroke-width="1"></polygon>
+<polygon points="347.5,496.25 402.5,496.25 375,523.75" fill="#ba7b15" stroke="white" stroke-width="1"></polygon>
+<polygon points="347.5,496.25 375,523.75 347.5,523.75" fill="#925599" stroke="white" stroke-width="1"></polygon>
+<text x="375" y="575" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15">13</text>
+</svg></p>
+<p>Mais on peut créer bien d’autres formes non convexes:</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 680" role="img" aria-label="Six tangrams"><rect width="100%" height="100%" fill="#faf9f6"></rect><metadata>Chat et cygne : Wiebke Köpp, TangramGenerator (MIT), voir LICENSE-TangramGenerator.txt. Personnages A2 et C3 : Lulu la taupe, <a href="https://lululataupe.com/imprimerie/jeux-d-observation/tangrams/586-tangram-modeles-personnages-couleur">https://lululataupe.com/imprimerie/jeux-d-observation/tangrams/586-tangram-modeles-personnages-couleur</a></metadata><g transform="translate(0 0)"><polygon points="259.5122,165.9817 201.5122,223.9817 201.5122,107.9817" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="259.5122,248.0061 177.4878,248.0061 259.5122,165.9817" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="160.5000,148.9939 201.5122,107.9817 201.5122,190.0061" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="119.4878,90.9939 90.4878,119.9939 90.4878,61.9939" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="119.4878,90.9939 148.4878,61.9939 148.4878,119.9939" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="119.4878,90.9939 148.4878,119.9939 119.4878,148.9939 90.4878,119.9939" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="119.4878,148.9939 160.5000,107.9817 201.5122,107.9817 160.5000,148.9939" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Chat</text>
+</g><g transform="translate(350 0)"><polygon points="143.5122,248.0061 143.5122,165.9817 225.5366,248.0061" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="201.5122,223.9817 143.5122,165.9817 259.5122,165.9817" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="102.5000,206.9939 143.5122,165.9817 143.5122,248.0061" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="131.5000,103.0061 90.4878,103.0061 131.5000,61.9939" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="131.5000,177.9939 102.5000,206.9939 102.5000,148.9939" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="131.5000,119.9939 160.5000,148.9939 131.5000,177.9939 102.5000,148.9939" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="131.5000,61.9939 131.5000,119.9939 160.5000,148.9939 160.5000,90.9939" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Cygne</text>
+</g><g transform="translate(700 0)"><polygon points="113.4817,77.6384 195.5061,77.6384 195.5061,159.6628" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="163.6061,127.7628 163.6061,209.7872 245.6305,209.7872" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="163.6061,166.2872 163.6061,248.3116 122.5939,207.2994" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="227.4061,209.7872 268.4183,209.7872 268.4183,250.7994" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="147.6561,232.3616 176.6561,261.3616 147.6561,290.3616" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="185.3561,77.6384 214.3561,48.6384 185.3561,19.6384 156.3561,48.6384" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="163.6061,127.7628 122.5939,127.7628 81.5817,86.7506 122.5939,86.7506" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Coureur</text>
+</g><g transform="translate(0 340)"><polygon points="92.9756,81.4695 175.0000,81.4695 175.0000,163.4939" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,81.4695 257.0244,81.4695 175.0000,163.4939" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,163.4939 233.0000,221.4939 175.0000,221.4939" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="133.9878,245.5183 133.9878,286.5305 92.9756,286.5305" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="216.0122,221.4939 257.0244,221.4939 257.0244,262.5061" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,81.4695 204.0000,52.4695 175.0000,23.4695 146.0000,52.4695" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,163.4939 175.0000,204.5061 133.9878,245.5183 133.9878,204.5061" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Équilibriste</text>
+</g><g transform="translate(350 340)"><polygon points="195.5061,124.1378 195.5061,206.1622 277.5305,206.1622" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="154.4939,124.1378 154.4939,206.1622 72.4695,206.1622" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="133.9878,103.8378 216.0122,103.8378 175.0000,62.8256" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="154.4939,206.1622 113.4817,247.1744 154.4939,247.1744" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="195.5061,206.1622 236.5183,247.1744 195.5061,247.1744" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="154.4939,103.8378 195.5061,103.8378 195.5061,144.8500 154.4939,144.8500" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="154.4939,144.8500 195.5061,185.8622 195.5061,226.8744 154.4939,185.8622" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Avion</text>
+</g><g transform="translate(700 340)"><polygon points="92.9756,155.0000 175.0000,155.0000 175.0000,72.9756" fill="#b84432" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,155.0000 257.0244,155.0000 175.0000,72.9756" fill="#246c94" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,196.0122 216.0122,237.0244 133.9878,237.0244" fill="#ba7b15" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,155.0000 133.9878,155.0000 133.9878,196.0122" fill="#648237" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="216.0122,237.0244 216.0122,196.0122 175.0000,196.0122" fill="#925599" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,155.0000 216.0122,155.0000 216.0122,196.0122 175.0000,196.0122" fill="#187f7c" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<polygon points="175.0000,155.0000 133.9878,196.0122 133.9878,237.0244 175.0000,196.0122" fill="#b94574" stroke="#fff" stroke-width="1" stroke-linejoin="round"></polygon>
+<text x="175" y="316" text-anchor="middle" font-family="sans-serif" font-size="21" fill="#333">Maison</text>
+</g></svg></p>
+
+  </details>
+  <p>Après avoir créés des <a href="polygones.md">polygones réguliers</a> à la règle et au compas, manipulez les polygones du tangram pour réaliser la forme de votre choix parmi 13 polygones convexes et 6 tangrams figuratifs.</p>
+<div data-tangram-picker="" data-allow-script="">
+  <style>
+    [data-tangram-picker] { margin-block: 1rem; }
+    #tangram-example-menu { max-inline-size: calc(100vw - 2rem); }
+    #tangram-example-menu > ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); inline-size: min(24rem, calc(100vw - 3rem)); min-inline-size: 0; max-block-size: min(28rem, 60vh); overflow-y: auto; }
+    #tangram-example-menu li[role="menuitem"] { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; white-space: normal; text-align: center; font-size: 0.875rem; }
+    #tangram-example-menu img { inline-size: 5rem; block-size: 5rem; max-inline-size: 100%; object-fit: contain; }
+    #tangram-example-menu [aria-current="true"] { outline: 2px solid currentColor; outline-offset: -2px; }
+  </style>
+  <tp-button id="tangram-example-trigger" type="button">Choisir une figure</tp-button>
+  <tp-dropdown id="tangram-example-menu" anchor="#tangram-example-trigger" placement="bottom" outside-click="">
+    <ul aria-label="Exemples de tangrams">
+      <li data-tangram-example="convex-01" data-label="Convexe 01"><img src="/geometry/docs/interlude/images/convex-01.svg" alt="" width="80" height="80"><span>Convexe 01</span></li>
+      <li data-tangram-example="convex-02" data-label="Convexe 02"><img src="/geometry/docs/interlude/images/convex-02.svg" alt="" width="80" height="80"><span>Convexe 02</span></li>
+      <li data-tangram-example="convex-03" data-label="Convexe 03"><img src="/geometry/docs/interlude/images/convex-03.svg" alt="" width="80" height="80"><span>Convexe 03</span></li>
+      <li data-tangram-example="convex-04" data-label="Convexe 04"><img src="/geometry/docs/interlude/images/convex-04.svg" alt="" width="80" height="80"><span>Convexe 04</span></li>
+      <li data-tangram-example="convex-05" data-label="Convexe 05"><img src="/geometry/docs/interlude/images/convex-05.svg" alt="" width="80" height="80"><span>Convexe 05</span></li>
+      <li data-tangram-example="convex-06" data-label="Convexe 06"><img src="/geometry/docs/interlude/images/convex-06.svg" alt="" width="80" height="80"><span>Convexe 06</span></li>
+      <li data-tangram-example="convex-07" data-label="Convexe 07"><img src="/geometry/docs/interlude/images/convex-07.svg" alt="" width="80" height="80"><span>Convexe 07</span></li>
+      <li data-tangram-example="convex-08" data-label="Convexe 08"><img src="/geometry/docs/interlude/images/convex-08.svg" alt="" width="80" height="80"><span>Convexe 08</span></li>
+      <li data-tangram-example="convex-09" data-label="Convexe 09"><img src="/geometry/docs/interlude/images/convex-09.svg" alt="" width="80" height="80"><span>Convexe 09</span></li>
+      <li data-tangram-example="convex-10" data-label="Convexe 10"><img src="/geometry/docs/interlude/images/convex-10.svg" alt="" width="80" height="80"><span>Convexe 10</span></li>
+      <li data-tangram-example="convex-11" data-label="Convexe 11"><img src="/geometry/docs/interlude/images/convex-11.svg" alt="" width="80" height="80"><span>Convexe 11</span></li>
+      <li data-tangram-example="convex-12" data-label="Convexe 12"><img src="/geometry/docs/interlude/images/convex-12.svg" alt="" width="80" height="80"><span>Convexe 12</span></li>
+      <li data-tangram-example="convex-13" data-label="Convexe 13"><img src="/geometry/docs/interlude/images/convex-13.svg" alt="" width="80" height="80"><span>Convexe 13</span></li>
+      <li data-tangram-example="chat" data-label="Chat"><img src="/geometry/docs/interlude/images/chat.svg" alt="" width="80" height="80"><span>Chat</span></li>
+      <li data-tangram-example="cygne" data-label="Cygne"><img src="/geometry/docs/interlude/images/cygne.svg" alt="" width="80" height="80"><span>Cygne</span></li>
+      <li data-tangram-example="coureur" data-label="Coureur"><img src="/geometry/docs/interlude/images/coureur.svg" alt="" width="80" height="80"><span>Coureur</span></li>
+      <li data-tangram-example="equilibriste" data-label="Équilibriste"><img src="/geometry/docs/interlude/images/equilibriste.svg" alt="" width="80" height="80"><span>Équilibriste</span></li>
+      <li data-tangram-example="avion" data-label="Avion"><img src="/geometry/docs/interlude/images/avion.svg" alt="" width="80" height="80"><span>Avion</span></li>
+      <li data-tangram-example="maison" data-label="Maison"><img src="/geometry/docs/interlude/images/maison.svg" alt="" width="80" height="80"><span>Maison</span></li>
+    </ul>
+  </tp-dropdown>
+  <script src="/geometry/docs/interlude/tangram-picker.js"></script>
+</div>
+<tp-tangram id="tangram">
+  
+  </tp-tangram>
+  
