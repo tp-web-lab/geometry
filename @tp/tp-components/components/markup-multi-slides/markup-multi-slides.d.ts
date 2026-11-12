@@ -28,10 +28,9 @@ import "../menu/menu.js";
 import "../slide-note/slide-note.js";
 import { type SlideAutoMode } from "./slide-playback.js";
 /**
- * Uses the complete multi-pages implementation and replaces only its rendered
- * previous/next navigation with slide controls.
+ * The custom `<tp-markup-multi-slides>` element presents multi-format pages as a responsive slide deck.
  *
- * @summary presents multi-format pages as a responsive slide deck.
+ * @summary Presents multi-format pages as a responsive slide deck.
  * @cssprop --tp-slide-content-width = 65em - Maximum content width.
  * @cssprop --tp-slide-content-padding = clamp(1em, 3vw, 3em) - Inline content padding.
  * @cssprop --tp-slide-font-size = clamp(1rem, calc(0.65rem + 1.15vw), 2.5rem) - Responsive slide content font size.
@@ -43,7 +42,7 @@ import { type SlideAutoMode } from "./slide-playback.js";
  * @attr {number} timing = 5000 - Positive integer milliseconds per progressive step in timing mode, also used when notes are absent or finished.
  * @tagname tp-markup-multi-slides
  * @example
- * <tp-markup-multi-slides repository="/slides"></tp-markup-multi-slides>
+ * <tp-markup-multi-slides repository="/docs/components/markup-multi-slides/docs" label="Mixed markup slides"></tp-markup-multi-slides>
  */
 export declare class TpMarkupMultiSlides extends TpMarkupMultiPages {
     static get observedAttributes(): string[];

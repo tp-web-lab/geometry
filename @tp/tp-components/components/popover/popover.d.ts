@@ -2,11 +2,14 @@
  * @module components/popover
  * @summary Popover overlay component.
  */
-import { TpOverlayElement } from '../overlay/overlay.js';
-type TpPopoverPlacement = 'top' | 'end' | 'bottom' | 'start';
 /**
- * `<tp-popover>` affiche un contenu flottant ancré à un élément cible,
- * sans utiliser de Shadow DOM.
+ * @tp-dependency tp-base
+ * @summary Shared base class for tp-* components.
+ */
+import { TpOverlayElement } from "../overlay/overlay.js";
+type TpPopoverPlacement = "top" | "end" | "bottom" | "start";
+/**
+ * The custom `<tp-popover>` element displays anchored popover content.
  *
  * Exemple :
  *
@@ -41,7 +44,12 @@ type TpPopoverPlacement = 'top' | 'end' | 'bottom' | 'start';
  * @event tp-popover-toggle Emitted when the popover open state changes.
  * @eventdetail tp-popover-toggle { backdrop: boolean; open: boolean; outsideClick: boolean; anchor: string; placement: "top" | "end" | "bottom" | "start" }
  * @example
- * <tp-popover></tp-popover>
+ * <tp-box data-intro-action="popover" data-allow-script="">
+ *   <tp-button id="intro-popover-trigger" data-demo-trigger="">Show more information</tp-button>
+ *   <tp-popover anchor="#intro-popover-trigger" outside-click=""><p>This panel contains additional information.</p><tp-button data-demo-close="">Close</tp-button></tp-popover>
+ *   <p data-demo-status="" role="status">Try the popover using its trigger.</p>
+ *   <script src="/docs/components/_shared/introduction-actions.js"></script>
+ * </tp-box>
  */
 export declare class TpPopover extends TpOverlayElement {
     protected readonly overlayName = "tp-popover";

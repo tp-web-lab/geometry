@@ -4,7 +4,9 @@
  */
 import { TpBase } from "../base/base.js";
 /**
- * @summary Displays SVG icons from inline markup, a URL or an icon library, with sizing, color, transforms and fallbacks.
+ * The custom `<tp-icon>` element displays icons and vector images.
+ *
+ * @summary Displays icons and vector images.
  * @tagname tp-icon
  * @attr {string} name = "" - Icon identifier in the selected library, for example heart or settings. Used when no inline SVG or successfully loaded src is available.
  * @attr {string} library = "tp" - Registry containing name and the first fallback-icon lookup. Built-in libraries: tp, languages, flags, numbers, letters, screens and components. Custom registered libraries are also accepted.
@@ -20,7 +22,7 @@ import { TpBase } from "../base/base.js";
  * @attr {string} fallback-icon = "" - Backup icon identifier used when inline SVG, src and name provide no icon. Looked up in the selected library, then in tp; if unavailable, fallback text is used.
  * @example
  * <tp-icon name="heart" size="3rem" aria-label="Heart"></tp-icon>
- * @cssprop [--tp-icon-size=1em] Width and height of the rendered icon; assigned internally from size multiplied by scale.
+ *  @cssprop [--tp-icon-size=1em] Width and height of the rendered icon; assigned internally from size multiplied by scale.
  */
 export declare class TpIcon extends TpBase {
     /**
@@ -28,6 +30,7 @@ export declare class TpIcon extends TpBase {
      * @internal
      */
     private static readonly styleId;
+    private static nextSvgId;
     /**
      * @summary Internal rendering container.
      * @internal

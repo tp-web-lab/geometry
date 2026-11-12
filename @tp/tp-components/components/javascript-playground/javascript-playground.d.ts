@@ -98,7 +98,7 @@ import type { TpExampleProjectMetadata } from "../playground/playground-example-
 import { TpJavascriptProject } from "./javascript-project.js";
 export { TpJavascriptProject } from "./javascript-project.js";
 /**
- * JavaScript playground component.
+ * The custom `<tp-javascript-playground>` element edits and runs a JavaScript project.
  *
  * Provides a file-based playground that runs JavaScript modules in an isolated preview.
  *
@@ -109,7 +109,7 @@ export { TpJavascriptProject } from "./javascript-project.js";
  * @attr {string} src = "" - JSON project or javascript source file to load.
  *
  * @example
- * <tp-javascript-playground></tp-javascript-playground>
+ * <tp-javascript-playground src="/docs/components/_shared/intro-projects/javascript.json"></tp-javascript-playground>
  */
 export declare class TpJavascriptPlayground extends TpPlayground<TpJavascriptProject> {
     protected get supportsTestExecution(): boolean;

@@ -6,7 +6,9 @@ import { TpBase } from "../base/base.js";
 import "../button/button.js";
 import "../button-group/button-group.js";
 /**
- * @summary Conway's Game of Life component.
+ * The custom `<tp-game-life>` element simulates Conway’s Game of Life on an editable grid.
+ *
+ * @summary Simulates Conway’s Game of Life on an editable grid.
  * @tagname tp-game-life
  * @attr {string} wrap = "" - Connects opposite grid edges so cells at a boundary interact with cells on the opposite side.
  * @attr {string} steps = "" - Number of generations to compute before the first display and after reset. Zero or a negative value keeps the starting grid.
@@ -27,7 +29,7 @@ import "../button-group/button-group.js";
  * @attr {string} dead-color = "" - SVG fill color for dead cells.
  * @attr {string} alive-color = "" - SVG fill color for living cells.
  * @example
- * <tp-game-life></tp-game-life>
+ * <tp-game-life preset="glider" label="Glider" cell-size="14"></tp-game-life>
  */
 export declare class TpGameLife extends TpBase {
     private static readonly gameLifeStyleId;

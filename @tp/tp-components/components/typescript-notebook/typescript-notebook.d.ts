@@ -9,12 +9,20 @@
 import "../notebook/notebook.js";
 import { TpNotebook } from "../notebook/notebook.js";
 /**
+ * The custom `<tp-typescript-notebook>` element combines written explanations and executable TypeScript code in an interactive notebook.
+ *
  * @tp-dependency tp-notebook
- * @summary Interactive notebook combining markup and executable code cells.
+ * @summary Combines written explanations and executable TypeScript code in an interactive notebook.
  * @tagname tp-typescript-notebook
  * @summary Interactive TypeScript notebook with markup and code cells.
  * @example
- * <tp-typescript-notebook></tp-typescript-notebook>
+ * <tp-typescript-notebook>
+ *     <script type="tp/markdown"># Interactive TypeScript
+ *
+ * Select **Run all cells** to execute the program. Use the code button in a cell to edit its source.</script>
+ *     <script type="tp/typescript">const language: string = 'TypeScript';
+ * console.log(`Hello from ${language}`);</script>
+ *   </tp-typescript-notebook>
  */
 export declare class TpTypescriptNotebook extends TpNotebook {
     connectedCallback(): void;

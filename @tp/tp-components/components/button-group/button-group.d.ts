@@ -17,17 +17,24 @@ import "../button/button.js";
  */
 export type TpButtonGroupOrientation = "horizontal" | "vertical";
 /**
- * @summary API documentation summary.
+ * The custom `<tp-button-group>` element groups related buttons with optional attached borders and vertical layout.
+ *
+ * @summary Groups related buttons with optional attached borders and vertical layout.
  * @tagname tp-button-group
  * @attr {string} orientation = "horizontal" - Arrangement of buttons: horizontal in a row, or vertical in a column.
  * @attr {boolean} attached = false - Joins adjacent buttons without gaps and removes their inner corner rounding.
  * @attr {boolean} stretch = false - Expands the group to the available width and gives its buttons equal flexible space.
  * @example
- * <tp-button-group>
- * <tp-button>Previous</tp-button>
- *   <tp-button data-next>Next</tp-button>
- * </tp-button-group>
- * @cssprop [--tp-button-group-gap=0] Space between adjacent buttons in the group.
+ * <tp-box data-page-navigation="" data-allow-script="">
+ *   <p>Use the grouped buttons to change the current page.</p>
+ *   <tp-button-group attached="" aria-label="Page navigation">
+ *     <tp-button data-previous="" disabled="">Previous</tp-button>
+ *     <tp-button data-next="">Next</tp-button>
+ *   </tp-button-group>
+ *   <p data-page-status="" role="status">Page 1 of 5</p>
+ *   <script src="/docs/components/button-group/examples/page-navigation.js"></script>
+ * </tp-box>
+ *  @cssprop [--tp-button-group-gap=0] Space between adjacent buttons in the group.
  */
 export declare class TpButtonGroup extends TpBase {
     /**

@@ -6,7 +6,7 @@
   "examples": [
     {
       "label": "Example 1",
-      "code": "```html\n<tp-menu>\n  <ul>\n    <li><a href=\"/#/components/button/index.md\">Buttons</a></li>\n    <li><a href=\"/#/components/tabs/index.md\">Tabs</a></li>\n    <li><a href=\"/#/components/tree/index.md\">Trees</a></li>\n  </ul>\n</tp-menu>\n<script src=\"/docs/components/menu/examples/navigation.js\"></script>\n```"
+      "code": "<tp-menu>\n  <ul>\n    <li><a href=\"/#/components/button/index.md\">Buttons</a></li>\n    <li><a href=\"/#/components/tabs/index.md\">Tabs</a></li>\n    <li><a href=\"/#/components/tree/index.md\">Trees</a></li>\n  </ul>\n</tp-menu>\n<script src=\"/docs/components/menu/examples/navigation.js\"></script>"
     }
   ],
   "attributes": [
@@ -35,6 +35,7 @@
   "events": [
     {
       "name": "tp-menu-item-select",
+      "emitted": true,
       "description": "Emitted when a menu item without submenu is selected.",
       "detail": "{ item: HTMLLIElement }"
     }
@@ -55,8 +56,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "Menu",
-    "introduction": "The custom `<tp-menu>` element implements the <tp-icon name=\"menu\" library=\"components\" size=\"1.25em\"></tp-icon> Menu functionality: turns a nested list into a keyboard-accessible menu.",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Open a menu branch to reveal its entries, then choose an available action or link. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>←</kbd> / <kbd>→</kbd> in a horizontal menu, <kbd>↑</kbd> / <kbd>↓</kbd> in a vertical menu | Focus the preceding or following item. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Activate the focused action or link, or open or close its submenu. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-menu>` element turns a nested list into a keyboard-accessible menu.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Open a menu branch to reveal its entries, then choose an available action or link. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>←</kbd> / <kbd>→</kbd> in a horizontal menu, <kbd>↑</kbd> / <kbd>↓</kbd> in a vertical menu | Focus the preceding or following item. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Activate the focused action or link, or open or close its submenu. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": []
   }
 }

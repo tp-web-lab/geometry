@@ -39,12 +39,14 @@ import type { TpAsciidocViewer } from "../asciidoc-viewer/asciidoc-viewer.js";
 import "../asciidoc-viewer/asciidoc-viewer.js";
 import { TpMarkupViewerQuestion } from "../markup-viewer-question/markup-viewer-question.js";
 /**
- * @summary checks rendered AsciiDoc using a viewer and external JavaScript DOM tests.
+ * The custom `<tp-asciidoc-viewer-question>` element presents and grades exercises based on rendered AsciiDoc documents.
+ *
+ * @summary Presents and grades exercises based on rendered AsciiDoc documents.
  * @tagname tp-asciidoc-viewer-question
  * @accessibility Reuses question actions, feedback tabs and the editable markup viewer.
  * @keyboard {Enter / Space} Expands the question or activates a focused action.
  * @example
- * <tp-asciidoc-viewer-question open src="/docs/components/markup-viewer-question/examples/emphasis.adoc" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
+ * <tp-asciidoc-viewer-question open="" src="/docs/components/markup-viewer-question/examples/emphasis.adoc" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
  *   <dl>
  *     <dt>Title</dt><dd>Semantic emphasis</dd>
  *     <dt>Prompt</dt><dd>Mark Hello with strong emphasis. Open Code to edit, then submit.</dd>

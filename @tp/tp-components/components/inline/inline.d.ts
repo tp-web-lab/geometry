@@ -8,8 +8,7 @@
  */
 import { TpBase } from "../base/base.js";
 /**
- * `<tp-inline>` aligne ses enfants sur une seule ligne, sans retour à la ligne,
- * sans utiliser de Shadow DOM.
+ * The custom `<tp-inline>` element arranges content side by side in a single row.
  *
  * Base styles:
  * - `display: flex`
@@ -23,13 +22,16 @@ import { TpBase } from "../base/base.js";
  * - `justify` : valeur de `justify-content`
  * - `align` : valeur de `align-items`
  * - `stretch` : permet aux enfants de s'étirer (`flex: 1 1 0`)
+ * @summary Arranges content side by side in a single row.
  * @tagname tp-inline
  * @attr {"normal" | "stretch" | "center" | "start" | "end" | "flex-start" | "flex-end" | "self-start" | "self-end" | "baseline" | "first baseline" | "last baseline"} align = "center" - Cross-axis alignment applied to align-items.
  * @attr {string} gap = "0.5rem" - Gap between children. When absent, uses the --tp-inline-gap CSS default.
  * @attr {"normal" | "start" | "end" | "flex-start" | "flex-end" | "center" | "left" | "right" | "space-between" | "space-around" | "space-evenly" | "stretch"} justify = "flex-start" - Main-axis alignment applied to justify-content.
  * @example
- * <tp-inline></tp-inline>
- * @cssprop [--tp-inline-gap=0.5rem] Space between adjacent items in the single horizontal row.
+ * <tp-inline gap="1rem" align="center">
+ *     <tp-button>Previous</tp-button><span>Page 2 of 5</span><tp-button>Next</tp-button>
+ *   </tp-inline>
+ *  @cssprop [--tp-inline-gap=0.5rem] Space between adjacent items in the single horizontal row.
  */
 export declare class TpInline extends TpBase {
     /**

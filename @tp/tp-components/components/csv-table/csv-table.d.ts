@@ -2,7 +2,9 @@
 import { TpBase } from "../base/base.js";
 import "../callout/callout.js";
 /**
- * @summary creates an HTML table from CSV text or a CSV file.
+ * The custom `<tp-csv-table>` element creates an HTML table from CSV text or a CSV file.
+ *
+ * @summary Creates an HTML table from CSV text or a CSV file.
  * @tagname tp-csv-table
  * @attr {string} src = "" - CSV file URL; takes precedence over inline source.
  * @attr {string} separator = "," - One-character field separator; use \t for a tab.
@@ -10,13 +12,13 @@ import "../callout/callout.js";
  * @accessibility Uses native table structure and th scope="col" for the optional heading row.
  * @accessibilityresponsibility Provide meaningful column headings and surrounding context for the data.
  * @example
- * <tp-csv-table heading>
- * <script type="tp/csv-table">
- * Country,Capital
- * Estonia,Tallinn
- * Latvia,Riga
- * Lithuania,Vilnius
- * </script>
+ * <tp-csv-table heading="">
+ *   <script type="tp/csv-table">
+ *     Country,Capital
+ *     Estonia,Tallinn
+ *     Latvia,Riga
+ *     Lithuania,Vilnius
+ *   </script>
  * </tp-csv-table>
  */
 export declare class TpCsvTable extends TpBase {

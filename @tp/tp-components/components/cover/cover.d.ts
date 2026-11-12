@@ -4,7 +4,7 @@
  */
 import { TpBase } from "../base/base.js";
 /**
- * Cover layout component, without Shadow DOM.
+ * The custom `<tp-cover>` element creates a vertical cover layout with an optional centered heading element.
  *
  * @summary Creates a vertical cover layout with an optional centered heading element.
  * @tagname tp-cover
@@ -20,9 +20,9 @@ import { TpBase } from "../base/base.js";
  * @cssprop --tp-cover-padding Default inner padding.
  * @example
  * <tp-cover min-height="16rem" heading="h2">
- * <p>A short introduction</p>
- * <h2>A heading centered in the cover</h2>
- * <p>Supporting information stays below.</p>
+ *   <p>A short introduction</p>
+ *   <h2>A heading centered in the cover</h2>
+ *   <p>Supporting information stays below.</p>
  * </tp-cover>
  */
 export declare class TpCover extends TpBase {

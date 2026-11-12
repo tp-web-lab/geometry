@@ -2,11 +2,11 @@
   "tagname": "tp-filesystem",
   "classname": "TpFilesystem",
   "superclass": "TpBase",
-  "description": "In-memory file system with a file tree UI.",
+  "description": "Organizes project files and folders in an editable tree.",
   "examples": [
     {
       "label": "Example 1",
-      "code": "<tp-filesystem></tp-filesystem>"
+      "code": "<tp-box data-intro-action=\"filesystem\" data-allow-script=\"\">\n  <p>Expand the folders and select a file in this in-memory example.</p>\n  <tp-filesystem></tp-filesystem>\n  <p data-demo-status=\"\" role=\"status\">Select a file to see its path.</p>\n  <script src=\"/docs/components/_shared/introduction-actions.js\"></script>\n</tp-box>"
     }
   ],
   "attributes": [],
@@ -95,41 +95,49 @@
   "events": [
     {
       "name": "tp-filesystem-active",
+      "emitted": true,
       "description": "Emitted when the active file changes.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-filesystem-add",
+      "emitted": true,
       "description": "Emitted when a file is added.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-filesystem-change",
+      "emitted": true,
       "description": "Emitted when the file list changes.",
       "detail": "{ files: TpFile[] }"
     },
     {
       "name": "tp-filesystem-delete",
+      "emitted": true,
       "description": "Emitted when a file is deleted.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-filesystem-move",
+      "emitted": true,
       "description": "Emitted when a file is moved.",
       "detail": "{ oldPath: string; newPath: string }"
     },
     {
       "name": "tp-filesystem-open",
+      "emitted": true,
       "description": "Emitted when a file is opened.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-filesystem-rename",
+      "emitted": true,
       "description": "Emitted when a file or directory is renamed.",
       "detail": "{ oldPath: string; newPath: string }"
     },
     {
       "name": "tp-filesystem-write",
+      "emitted": true,
       "description": "Emitted when file content is written.",
       "detail": "{ path: string; content: string }"
     }
@@ -164,8 +172,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "Filesystem",
-    "introduction": "The custom `<tp-filesystem>` element implements the <tp-icon name=\"filesystem\" library=\"components\" size=\"1.25em\"></tp-icon> Filesystem functionality: in-memory file system with a file tree UI.",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Use the file browser to navigate folders and select files. |\n| Using the component | File access may require permission from the browser. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| Focused controls | Use each control’s standard keyboard interaction.  |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-filesystem>` element organizes project files and folders in an editable tree.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Use the file browser to navigate folders and select files. |\n| Using the component | File access may require permission from the browser. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| Focused controls | Use each control’s standard keyboard interaction.  |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": []
   }
 }

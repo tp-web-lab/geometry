@@ -2,11 +2,14 @@
  * @module components/tooltip
  * @summary Tooltip component.
  */
-import { TpOverlayElement } from '../overlay/overlay.js';
-type TpTooltipPlacement = 'top' | 'end' | 'bottom' | 'start';
 /**
- * `<tp-tooltip>` affiche un texte d'aide flottant ancré à un élément cible,
- * sans utiliser de Shadow DOM.
+ * @tp-dependency tp-base
+ * @summary Shared base class for tp-* components.
+ */
+import { TpOverlayElement } from "../overlay/overlay.js";
+type TpTooltipPlacement = "top" | "end" | "bottom" | "start";
+/**
+ * The custom `<tp-tooltip>` element displays anchored tooltip content.
  *
  * Exemple :
  *
@@ -42,7 +45,12 @@ type TpTooltipPlacement = 'top' | 'end' | 'bottom' | 'start';
  * @accessibilityresponsibility Ensure the anchor remains understandable without the tooltip.
  * @keyboard {Escape} Closes the tooltip.
  * @example
- * <tp-tooltip></tp-tooltip>
+ * <tp-box data-intro-action="tooltip" data-allow-script="">
+ *   <tp-button id="intro-tooltip-trigger" data-demo-trigger="">Hover or focus for help</tp-button>
+ *   <tp-tooltip anchor="#intro-tooltip-trigger">This help also appears when the trigger receives keyboard focus.</tp-tooltip>
+ *   <p data-demo-status="" role="status">Try the tooltip using its trigger.</p>
+ *   <script src="/docs/components/_shared/introduction-actions.js"></script>
+ * </tp-box>
  */
 export declare class TpTooltip extends TpOverlayElement {
     protected readonly overlayName = "tp-tooltip";

@@ -94,7 +94,7 @@ import type { TpExampleProjectMetadata } from "../playground/playground-example-
 import { TpHtmlProject } from "./html-project.js";
 export { TpHtmlProject } from "./html-project.js";
 /**
- * HTML playground component.
+ * The custom `<tp-html-playground>` element edits and runs an HTML project.
  *
  * Provides a file-based playground that runs HTML, CSS, and JavaScript in an isolated preview.
  *
@@ -105,7 +105,7 @@ export { TpHtmlProject } from "./html-project.js";
  * @attr {string} src = "" - JSON project or html source file to load.
  *
  * @example
- * <tp-html-playground></tp-html-playground>
+ * <tp-html-playground src="/docs/components/_shared/intro-projects/html.json"></tp-html-playground>
  */
 export declare class TpHtmlPlayground extends TpPlayground<TpHtmlProject> {
     protected get supportsTestExecution(): boolean;

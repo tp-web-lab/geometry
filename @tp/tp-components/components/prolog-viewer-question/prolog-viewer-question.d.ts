@@ -18,12 +18,14 @@
 import { TpPlaygroundQuestion } from "../playground-question/playground-question.js";
 import { TpPrologViewer } from "../prolog-viewer/prolog-viewer.js";
 /**
- * @summary checks a Prolog exercise using the viewer and an external test file.
+ * The custom `<tp-prolog-viewer-question>` element presents and grades Prolog programming exercises.
+ *
+ * @summary Presents and grades Prolog programming exercises.
  * @tagname tp-prolog-viewer-question
  * @accessibility Reuses TpQuestion's disclosure, actions and feedback tabs.
  * @keyboard {Enter / Space} Expands the question or activates a focused action.
  * @example
- * <tp-prolog-viewer-question open src="/docs/components/playground-question/examples/prolog/double.pl" test="/docs/components/playground-question/examples/prolog/double.test.pl">
+ * <tp-prolog-viewer-question open="" src="/docs/components/playground-question/examples/prolog/double.pl" test="/docs/components/playground-question/examples/prolog/double.test.pl">
  *   <dl>
  *     <dt>Title</dt><dd>Double a number</dd>
  *     <dt>Prompt</dt><dd>Complete double so it returns twice its argument. Open Code to edit, then submit to run the tests.</dd>

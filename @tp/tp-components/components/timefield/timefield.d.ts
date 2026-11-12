@@ -6,7 +6,9 @@ import "../icon-button/icon-button.js";
 import { TpBase } from "../base/base.js";
 export type TpTimefieldLabelPosition = "top" | "bottom" | "start" | "end";
 /**
- * @summary Native time field with labels, constraints, picker access, and clearing.
+ * The custom `<tp-timefield>` element collects a time within optional limits.
+ *
+ * @summary Collects a time within optional limits.
  * @tagname tp-timefield
  * @attr {string} label = "" - Visible label associated with the native time input.
  * @attr {string} label-position = "top" - Label position (`top`, `bottom`, `start`, or `end`).
@@ -25,8 +27,8 @@ export type TpTimefieldLabelPosition = "top" | "bottom" | "start" | "end";
  * @event change Emitted when the selected time is committed.
  * @event tp-clear Emitted after the embedded button clears the value.
  * @example
- * <tp-timefield label="Time" value="14:30" clearable></tp-timefield>
- * @cssprop [--tp-timefield-background=var(--tp-paper-color)] Background of the input control, excluding its label.
+ * <tp-timefield label="Time" value="14:30" clearable=""></tp-timefield>
+ *  @cssprop [--tp-timefield-background=var(--tp-paper-color)] Background of the input control, excluding its label.
  * @cssprop [--tp-timefield-border-color=var(--tp-neutral-stroke-soft)] Border color of the input control when it is not focused.
  * @cssprop [--tp-timefield-focus-color=var(--tp-brand-text-colorful)] Border color and translucent outline tint while focus is inside the control.
  * @cssprop [--tp-timefield-inline-size=10.5em] Preferred width of the field, limited by the available container width.

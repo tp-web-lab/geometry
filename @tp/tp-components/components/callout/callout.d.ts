@@ -19,8 +19,9 @@ import { type TpVariantType } from "../base/base.types.js";
 import "../icon/icon.js";
 import "../icon-button/icon-button.js";
 /**
- * Highlighted contextual content block.
- * @summary Highlighted contextual content block.
+ * The custom `<tp-callout>` element highlights a short message with an optional heading, icon and close button.
+ *
+ * @summary Highlights a short message with an optional heading, icon and close button.
  * @tagname tp-callout
  * @attr {string} variant = "neutral" - Visual variant (`success`, `danger`, `warning`, `info`, `neutral`, or `brand`).
  * @attr {string} heading = "" - Optional heading displayed above the content.
@@ -32,9 +33,9 @@ import "../icon-button/icon-button.js";
  * @method toast Displays the callout as a temporary toast notification in the top-right corner of the viewport.
  * @example
  * <tp-callout variant="info" heading="Information">
- *  The workshop starts at 9:00.
+ *   The workshop starts at 9:00.
  * </tp-callout>
- * @cssprop [--tp-callout-accent=var(--tp-neutral-text-colorful)] Color of the leading emphasis border; depends on variant.
+ *  @cssprop [--tp-callout-accent=var(--tp-neutral-text-colorful)] Color of the leading emphasis border; depends on variant.
  * @cssprop [--tp-callout-background=var(--tp-neutral-fill-softer)] Background color of the callout; depends on variant and appearance.
  * @cssprop [--tp-callout-border-color=var(--tp-neutral-stroke-soft)] Color of the thin outer border, excluding the leading emphasis border.
  * @cssprop [--tp-callout-border-width=4px] Thickness of the leading emphasis border.

@@ -13,6 +13,18 @@ Game components offer interactive puzzles and activities that exercise memory, l
 :::
 
 ::: tp-center { intrinsic }
+:tp-icon:{name="checkers" library="components" size="4em" aria-hidden="true"}
+
+[tp-checkers](checkers/index.md)
+:::
+
+::: tp-center { intrinsic }
+:tp-icon:{name="chess" library="components" size="4em" aria-hidden="true"}
+
+[tp-chess](chess/index.md)
+:::
+
+::: tp-center { intrinsic }
 :tp-icon:{name="crossword" library="components" size="4em" aria-hidden="true"}
 
 [tp-crossword](crossword/index.md)
@@ -24,10 +36,11 @@ Game components offer interactive puzzles and activities that exercise memory, l
 [tp-cryptarithm](cryptarithm/index.md)
 :::
 
-::: tp-center { intrinsic }
-:tp-icon:{name="game-life" library="components" size="4em" aria-hidden="true"}
 
-[tp-game-life](game-life/index.md)
+::: tp-center { intrinsic }
+:tp-icon:{name="kakuro" library="components" size="4em" aria-hidden="true"}
+
+[tp-kakuro](kakuro/index.md)
 :::
 
 ::: tp-center { intrinsic }
@@ -55,6 +68,12 @@ Game components offer interactive puzzles and activities that exercise memory, l
 :::
 
 ::: tp-center { intrinsic }
+:tp-icon:{name="puzzle" library="components" size="4em" aria-hidden="true"}
+
+[tp-puzzle](puzzle/index.md)
+:::
+
+::: tp-center { intrinsic }
 :tp-icon:{name="solitaire" library="components" size="4em" aria-hidden="true"}
 
 [tp-solitaire](solitaire/index.md)
@@ -70,6 +89,12 @@ Game components offer interactive puzzles and activities that exercise memory, l
 :tp-icon:{name="yakazu" library="components" size="4em" aria-hidden="true"}
 
 [tp-yakazu](yakazu/index.md)
+:::
+
+::: tp-center { intrinsic }
+:tp-icon:{name="wari" library="components" size="4em" aria-hidden="true"}
+
+[tp-wari](wari/index.md)
 :::
 
 ::: tp-center { intrinsic }

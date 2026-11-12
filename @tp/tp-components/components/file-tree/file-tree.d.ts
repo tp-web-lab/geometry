@@ -125,7 +125,7 @@ export interface TpFileTreeMoveRequestDetail {
     position: "inside" | "before" | "after";
 }
 /**
- * `<tp-file-tree>` affiche une arborescence de fichiers via `<tp-tree>`.
+ * The custom `<tp-file-tree>` element displays folders and files as an expandable tree.
  *
  * Ce composant est un adaptateur spécialisé :
  *
@@ -141,33 +141,38 @@ export interface TpFileTreeMoveRequestDetail {
  * clone, move ou add sont converties en événements afin qu’un composant parent
  * applique les changements.
  *
- * @summary Arbre spécialisé pour fichiers et dossiers.
+ * @summary Displays folders and files as an expandable tree.
  * @tagname tp-file-tree
  *
  *
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * @example
- * <tp-file-tree></tp-file-tree>
- * @cssprop [--tp-file-tree-active-color=inherit] Text color of the active file row.
+ * <tp-box data-intro-action="file-tree" data-allow-script="">
+ *   <p>Expand the folders and select a file in this in-memory example.</p>
+ *   <tp-file-tree></tp-file-tree>
+ *   <p data-demo-status="" role="status">Select a file to see its path.</p>
+ *   <script src="/docs/components/_shared/introduction-actions.js"></script>
+ * </tp-box>
+ *  @cssprop [--tp-file-tree-active-color=inherit] Text color of the active file row.
  * @cssprop [--tp-file-tree-dirty-color=#d97706] Color of the dot marking a file with unsaved changes.
  * @cssprop [--tp-file-tree-icon-size=1rem] Width and height of file and directory icons.
  * @cssprop [--tp-file-tree-open-color=inherit] Text color of rows whose paths are marked as open.

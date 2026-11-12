@@ -39,12 +39,14 @@ import type { TpHtmlViewer } from "../html-viewer/html-viewer.js";
 import "../html-viewer/html-viewer.js";
 import { TpMarkupViewerQuestion } from "../markup-viewer-question/markup-viewer-question.js";
 /**
- * @summary checks rendered HTML using a viewer and external JavaScript DOM tests.
+ * The custom `<tp-html-viewer-question>` element presents and grades exercises based on rendered HTML documents.
+ *
+ * @summary Presents and grades exercises based on rendered HTML documents.
  * @tagname tp-html-viewer-question
  * @accessibility Reuses question actions, feedback tabs and the editable markup viewer.
  * @keyboard {Enter / Space} Expands the question or activates a focused action.
  * @example
- * <tp-html-viewer-question open src="/docs/components/markup-viewer-question/examples/emphasis.html" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
+ * <tp-html-viewer-question open="" src="/docs/components/markup-viewer-question/examples/emphasis.html" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
  *   <dl>
  *     <dt>Title</dt><dd>Semantic emphasis</dd>
  *     <dt>Prompt</dt><dd>Mark Hello with strong emphasis. Open Code to edit, then submit.</dd>

@@ -38,7 +38,9 @@ import "../code-editor/code-editor.js";
 import "../icon-button/icon-button.js";
 import "../graph-geometry/geometry-actions.js";
 /**
- * @summary Explore how uphill and downhill gradients change the effort needed to move a point.
+ * The custom `<tp-slope-simulator>` element shows how uphill and downhill gradients affect the effort needed to move a point.
+ *
+ * @summary Shows how uphill and downhill gradients affect the effort needed to move a point.
  * @tagname tp-slope-simulator
  * @attr {string} src = "" - JSON file containing cycling profiles; takes precedence over the inline script.
  * @attr {number} speed-base = 30 - Fictional flat-ground speed in km/h; a positive attribute overrides the optional JSON speed-base.
@@ -48,7 +50,7 @@ import "../graph-geometry/geometry-actions.js";
  * @keyboard F1 Toggle the toolbar while editing profile JSON.
  * @example
  * <tp-slope-simulator></tp-slope-simulator>
- * @accessibility Represents each movable point as a labelled horizontal slider with current value and descriptive value text; Left and Right arrows provide a keyboard alternative to dragging.
+ *  @accessibility Represents each movable point as a labelled horizontal slider with current value and descriptive value text; Left and Right arrows provide a keyboard alternative to dragging.
  * @accessibility Hides decorative route SVGs, labels the profile editor and controls, exposes the grid toggle state with aria-pressed and reports source failures in an alert region.
  * @accessibilityresponsibility Provide clear profile labels and units, and a textual explanation of the route and effort relationship so the lesson does not depend only on the visual curve.
  */

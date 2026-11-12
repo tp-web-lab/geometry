@@ -57,7 +57,9 @@ export interface TpXYPlotData {
     }[];
 }
 /**
- * @summary XY graph rendering component.
+ * The custom `<tp-xy-plot>` element plots functions, points and curves on labelled coordinate axes.
+ *
+ * @summary Plots functions, points and curves on labelled coordinate axes.
  * @tagname tp-xy-plot
  * @attr {string} src = "" - URL of a text file containing the XY graph definition; used instead of the inline tp/xy-plot script.
  * @attr {"both" | "horizontal" | "vertical" | "none"} grid = "both" - Visible grid directions; overrides the graph directive when present.
@@ -68,14 +70,14 @@ export interface TpXYPlotData {
  * @attr {boolean} settings = false - Shows interactive settings below the graph and its controls.
  * @example
  * <tp-xy-plot label="Functions">
- *   <script type="tp/xy-plot">
- *     label = "Functions"
- *     x-axis = [-10, 10]
- *     y-axis = [-5, 5]
- *     curve Sine = function(x, 2*sin(x))
- *     curve Line = function(x, x/2)
- *   </script>
- * </tp-xy-plot>
+ *     <script type="tp/xy-plot">
+ * label = "Functions"
+ * x-axis = [-10, 10]
+ * y-axis = [-5, 5]
+ * curve Sine = function(x, 2*sin(x))
+ * curve Line = function(x, x/2)
+ * </script>
+ *   </tp-xy-plot>
  */
 export declare class TpXYPlot extends TpBase {
     /** Optional numeric data, retained when the component reconnects. */

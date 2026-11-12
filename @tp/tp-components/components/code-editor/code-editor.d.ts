@@ -92,7 +92,7 @@ export declare const tpMarkdownSyntaxPlugin: ViewPlugin<{
 }, undefined>;
 export declare const tpMarkdownSyntaxTheme: Extension;
 /**
- * Code editor based on CodeMirror 6, without Shadow DOM.
+ * The custom `<tp-code-editor>` element displays and edits source code.
  *
  * Possible sources:
  * 1. content defined by `setValue()`
@@ -109,7 +109,7 @@ export declare const tpMarkdownSyntaxTheme: Extension;
  * This panel is displayed when the `toolbar` attribute is present and can be
  * toggled with F1.
  *
- * @summary Displays a CodeMirror 6 based code editor.
+ * @summary Displays and edits source code.
  * @tagname tp-code-editor
  *
  * @attr {string} dir = "inherited" - Text direction inherited from HTMLElement (`ltr`, `rtl`, `auto`).
@@ -161,7 +161,12 @@ export declare const tpMarkdownSyntaxTheme: Extension;
  * @cssprop --tp-code-editor-token-type Syntax color for types.
  * @cssprop --tp-code-editor-token-variable Syntax color for variables.
  * @example
- * <tp-code-editor></tp-code-editor>
+ * <tp-code-editor language="javascript" line-numbers="">
+ *   <script type="tp/javascript">
+ * const greeting = "Hello, tp-components!";
+ * console.log(greeting);
+ *   </script>
+ * </tp-code-editor>
  */
 export declare class TpCodeEditor extends TpBase {
     /**
@@ -203,6 +208,7 @@ export declare class TpCodeEditor extends TpBase {
     private panelObserver;
     private layoutObserver;
     private observedInlineSize;
+    private layoutFrame;
     private actionPanelEl;
     /**
      * Badge du langage courant.
@@ -533,6 +539,7 @@ export declare class TpCodeEditor extends TpBase {
      * Re-measures CodeMirror when a hidden tab/viewer becomes visible or when
      * its available inline size changes.
      */
+    private scheduleLayoutSync;
     private startLayoutObserver;
     /**
      * Injecte la feuille de styles du composant dans `document.head`

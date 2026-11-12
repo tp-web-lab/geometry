@@ -90,7 +90,7 @@ import type { TpExampleProjectMetadata } from "../playground/playground-example-
 import { TpRestructuredTextProject } from "./restructuredtext-project.js";
 export { TpRestructuredTextProject } from "./restructuredtext-project.js";
 /**
- * reStructuredText playground component.
+ * The custom `<tp-restructuredtext-playground>` element edits and renders a reStructuredText project.
  *
  * Provides a file-based playground that renders reStructuredText documents in the browser.
  *
@@ -101,7 +101,7 @@ export { TpRestructuredTextProject } from "./restructuredtext-project.js";
  * @attr {string} src = "" - JSON project or restructuredtext source file to load.
  *
  * @example
- * <tp-restructuredtext-playground></tp-restructuredtext-playground>
+ * <tp-restructuredtext-playground src="/docs/components/_shared/intro-projects/restructuredtext.json"></tp-restructuredtext-playground>
  */
 export declare class TpRestructuredTextPlayground extends TpPlayground<TpRestructuredTextProject> {
     protected createEmptyProject(): TpRestructuredTextProject;

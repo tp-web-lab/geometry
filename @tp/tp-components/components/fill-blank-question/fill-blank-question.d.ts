@@ -7,22 +7,35 @@ import { TpQuestion } from "../question/question.js";
 import "../fill-blank/fill-blank.js";
 import "../textfield/textfield.js";
 /**
- * @summary Fill-in-the-blank question: wraps tp-question with input/select validation.
+ * The custom `<tp-fill-blank-question>` element presents and grades a fill-in-the-blank question.
+ *
+ * @summary Presents and grades a fill-in-the-blank question.
  * @tagname tp-fill-blank-question
  *
  * @attr {boolean} case-sensitive = false - Requires matching uppercase and lowercase letters in answers.
  * @attr {string} mode = "mixed" - Blank mode: opened, closed, or mixed local choices.
  * @attr {boolean} partial = false - Allows incomplete submissions and marks filled blanks as correct or incorrect after feedback.
-
+ *
  * @example
- * <tp-fill-blank-question>
+ * <tp-fill-blank-question case-sensitive="">
  *   <dl>
- *     <dt>Answers</dt><dd><ol><li>Paris</li></ol></dd>
+ *     <dt>Answers</dt><dd><ol><li>Paris</li><li>Rome</li></ol></dd>
  *     <dt>Title</dt><dd>Geography</dd>
- *     <dt>Prompt</dt><dd>Complete the sentence.</dd>
- *     <dt>Form</dt><dd>The capital of France is <tp-textfield name="capital" placeholder="Capital" aria-placeholder="Capital" aria-label="Capital" clearable></tp-textfield></dd>
- *     <dt>Feedback</dt><dd>Check the spelling.</dd>
- *     <dt>Solution</dt><dd>Paris</dd>
+ *     <dt>Prompt</dt><dd>Complete both sentences.</dd>
+ *     <dt>Form</dt>
+ *     <dd>
+ *       <p>The capital of France is <tp-blank name="france-capital" placeholder="Capital" aria-label="Capital of France" clearable=""></tp-blank>.</p>
+ *       <p>The capital of Italy is <tp-blank name="italy-capital" placeholder="Capital" aria-label="Capital of Italy" clearable=""></tp-blank>.</p>
+ *     </dd>
+ *     <dt>Feedback</dt>
+ *     <dd>
+ *       <p>Check the spelling of each capital.</p>
+ *       <ul>
+ *         <li>The capital of France is home to the Eiffel Tower.</li>
+ *         <li>The capital of Italy is home to the Colosseum.</li>
+ *       </ul>
+ *     </dd>
+ *     <dt>Solution</dt><dd>The capital of France is Paris. The capital of Italy is Rome.</dd>
  *   </dl>
  * </tp-fill-blank-question>
  */

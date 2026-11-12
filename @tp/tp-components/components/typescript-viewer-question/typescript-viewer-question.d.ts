@@ -18,12 +18,14 @@
 import { TpPlaygroundQuestion } from "../playground-question/playground-question.js";
 import { TpTypescriptViewer } from "../typescript-viewer/typescript-viewer.js";
 /**
- * @summary checks a TypeScript exercise using the viewer and an external test file.
+ * The custom `<tp-typescript-viewer-question>` element presents and grades TypeScript programming exercises.
+ *
+ * @summary Presents and grades TypeScript programming exercises.
  * @tagname tp-typescript-viewer-question
  * @accessibility Reuses TpQuestion's disclosure, actions and feedback tabs.
  * @keyboard {Enter / Space} Expands the question or activates a focused action.
  * @example
- * <tp-typescript-viewer-question open src="/docs/components/playground-question/examples/typescript/double.ts" test="/docs/components/playground-question/examples/typescript/double.test.ts">
+ * <tp-typescript-viewer-question open="" src="/docs/components/playground-question/examples/typescript/double.ts" test="/docs/components/playground-question/examples/typescript/double.test.ts">
  *   <dl>
  *     <dt>Title</dt><dd>Double a number</dd>
  *     <dt>Prompt</dt><dd>Complete double so it returns twice its argument. Open Code to edit, then submit to run the tests.</dd>

@@ -6,7 +6,7 @@
   "examples": [
     {
       "label": "Example 1",
-      "code": "<tp-box>\n<tp-box id=\"intro-copy-code\" style=\"width:300px\">\n<pre><code>const answer = 6 * 7;</code></pre>\n</tp-box>\n<tp-copy-code for=\"intro-copy-code\"></tp-copy-code>\n</tp-box>"
+      "code": "<tp-box>\n  <tp-box id=\"intro-copy-code\"><pre><code>const answer = 6 * 7;</code></pre></tp-box>\n  <tp-copy-code for=\"intro-copy-code\"></tp-copy-code>\n</tp-box>"
     }
   ],
   "attributes": [
@@ -66,11 +66,13 @@
   "events": [
     {
       "name": "tp-copy-code-error",
+      "emitted": true,
       "description": "Emitted when the target cannot be resolved or its contents cannot be copied; message explains the failure.",
       "detail": "{ message: string }"
     },
     {
       "name": "tp-copy-code-success",
+      "emitted": true,
       "description": "Emitted after clipboard writing succeeds. The detail gives the copied text length in UTF-16 code units and the source element.",
       "detail": "{ length: number; target: HTMLElement }"
     }
@@ -104,8 +106,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "Copy code",
-    "introduction": "The custom `<tp-copy-code>` element implements the <tp-icon name=\"copy-code\" library=\"components\" size=\"1.25em\"></tp-icon> Copy code functionality: copies the textual content of a target component to the clipboard.",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Copy button | Copy the associated text. On code blocks, the button appears at the top right on hover or keyboard focus. |\n| Check mark | Temporarily confirms that the copy succeeded. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Activate the focused button. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-copy-code>` element copies the textual content of a target component to the clipboard.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Copy button | Copy the associated text. On code blocks, the button appears at the top right on hover or keyboard focus. |\n| Check mark | Temporarily confirms that the copy succeeded. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Activate the focused button. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": []
   }
 }

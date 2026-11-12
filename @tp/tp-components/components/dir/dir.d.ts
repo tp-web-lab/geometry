@@ -9,7 +9,7 @@ import "../divider/divider.js";
 import { TpBase } from "../base/base.js";
 import { type TpDirType, type TpSizeType, type TpVariantType } from "../base/base.types.js";
 /**
- * `<tp-dir>` controls the reading direction of its parent element.
+ * The custom `<tp-dir>` element switches the reading direction of the surrounding content.
  *
  * It applies the `dir` attribute (`ltr` or `rtl`) to the parent that contains
  * `<tp-dir>`. In `auto` mode, it follows the document direction by observing
@@ -19,7 +19,7 @@ import { type TpDirType, type TpSizeType, type TpVariantType } from "../base/bas
  *
  * Multiple `<tp-dir>` controllers on the same parent stay synchronized.
  *
- * @summary Parent-scoped reading-direction switcher.
+ * @summary Switches the reading direction of the surrounding content.
  * @tagname tp-dir
  * @attr {string} mode = "auto" - Reading-direction mode (`ltr`, `rtl`, `auto`). In `auto`, RTL is inferred from language or supported region codes.
  * @attr {string} anchor = "" - CSS selector used as the explicit element that receives the selected direction.
@@ -30,9 +30,10 @@ import { type TpDirType, type TpSizeType, type TpVariantType } from "../base/bas
  * @event tp-dir-change Emitted when the reading direction applied to a target changes.
  * @eventdetail tp-dir-change { mode: "ltr" | "rtl" | "auto"; dir: "ltr" | "rtl"; anchor: string; target: HTMLElement }
  * @example
- * <p>The reading direction of this section can be changed.</p>
- *     <p>اس حصے کی پڑھنے کی سمت تبدیل کی جا سکتی ہے۔</p>
- *     <tp-dir></tp-dir>
+ * <tp-box>
+ *   <tp-dir></tp-dir>
+ *   <p>Use the direction button to switch this paragraph between left-to-right and right-to-left layout.</p>
+ * </tp-box>
  */
 export declare class TpDir extends TpBase {
     private static readonly styleId;

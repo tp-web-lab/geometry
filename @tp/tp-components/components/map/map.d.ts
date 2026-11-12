@@ -4,7 +4,9 @@ import "../icon-button/icon-button.js";
 import "../callout/callout.js";
 import "../xy-plot/xy-plot.js";
 /**
- * @summary displays an interactive OpenStreetMap with named markers and GPX routes or tracks.
+ * The custom `<tp-map>` element displays an interactive OpenStreetMap with named markers and GPX routes or tracks.
+ *
+ * @summary Displays an interactive OpenStreetMap with named markers and GPX routes or tracks.
  * @tagname tp-map
  * @attr {number} lat = 48.8566 - Latitude of the configured location, between -90 and 90.
  * @attr {number} lon = 2.3522 - Longitude of the configured location, between -180 and 180.
@@ -22,8 +24,8 @@ import "../xy-plot/xy-plot.js";
  * @keyboard {Enter / Space} Activates toolbar buttons; Enter opens a focused marker popup.
  * @keyboard {Escape} Closes an open popup.
  * @example
- * <tp-map lat="48.3904" lon="-4.4861" zoom="13" title="Brest, Brittany, France" marker></tp-map>
- * @cssprop [--tp-map-height=24rem] Height of the map viewport, with a minimum of 10rem.
+ * <tp-map lat="48.3904" lon="-4.4861" zoom="13" title="Brest, Brittany, France" marker=""></tp-map>
+ *  @cssprop [--tp-map-height=24rem] Height of the map viewport, with a minimum of 10rem.
  * @cssprop [--tp-map-width=100%] Preferred width of the map viewport and elevation profile, limited by the container width.
  */
 export declare class TpMap extends TpBase {

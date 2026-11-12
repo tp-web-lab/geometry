@@ -9,10 +9,12 @@
 import type { TpMarkupMultiPagesLanguage } from "../markup-multi-pages/markup-multi-pages.js";
 import { TpMarkupMultiSlides } from "../markup-multi-slides/markup-multi-slides.js";
 /**
+ * The custom `<tp-restructuredtext-multi-slides>` element presents reStructuredText documents as a slide deck.
+ *
  * @tagname tp-restructuredtext-multi-slides
- * @summary presents a navigable repository of reStructuredText slides.
+ * @summary Presents reStructuredText documents as a slide deck.
  * @example
- * <tp-restructuredtext-multi-slides></tp-restructuredtext-multi-slides>
+ * <tp-restructuredtext-multi-slides repository="/docs/components/restructuredtext-multi-pages/docs"></tp-restructuredtext-multi-slides>
  */
 export declare class TpRestructuredTextMultiSlides extends TpMarkupMultiSlides {
     protected get fixedLanguage(): TpMarkupMultiPagesLanguage;

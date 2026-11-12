@@ -18,8 +18,7 @@ import { TpBase } from "../base/base.js";
 import "../animation/animation.js";
 import "../icon/icon.js";
 /**
- * Bouton de copie de code basé sur `<tp-icon>`, avec feedback visuel,
- * changement temporaire d’icône et animation.
+ * The custom `<tp-copy-code>` element copies the textual content of a target component to the clipboard.
  *
  * The target can be defined as:
  * - via l’attribut `for`, qui référence l’`id` d’un élément cible
@@ -43,17 +42,15 @@ import "../icon/icon.js";
  * @attr {string} error-icon = "warning" - Icon name displayed after a failed clipboard copy; defaults to warning.
  * @attr {string} copied-text = "Copied!" - Accessible feedback text after a successful copy; defaults to Copied!.
  *
-
-
+ *
+ *
  *
  * @example
  * <tp-box>
- * <tp-box id="intro-copy-code" style="width:300px">
- * <pre><code>const answer = 6 * 7;</code></pre>
+ *   <tp-box id="intro-copy-code"><pre><code>const answer = 6 * 7;</code></pre></tp-box>
+ *   <tp-copy-code for="intro-copy-code"></tp-copy-code>
  * </tp-box>
- * <tp-copy-code for="intro-copy-code"></tp-copy-code>
- * </tp-box>
- * @cssprop [--tp-copy-code-error-color=red] Color of the copy control while reporting a failed clipboard operation.
+ *  @cssprop [--tp-copy-code-error-color=red] Color of the copy control while reporting a failed clipboard operation.
  * @cssprop [--tp-copy-code-success-color=green] Color of the copy control while confirming a successful clipboard operation.
  * @event tp-copy-code-success Emitted after clipboard writing succeeds. The detail gives the copied text length in UTF-16 code units and the source element.
  * @eventdetail tp-copy-code-success { length: number; target: HTMLElement }

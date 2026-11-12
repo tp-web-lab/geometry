@@ -3,10 +3,11 @@
  * @summary Single-page renderer selecting HTML, Markdown, AsciiDoc or reStructuredText.
  */
 import { TpBase } from "../base/base.js";
-export type TpMarkupSinglePageLanguage = "html" | "markdown" | "asciidoc" | "restructuredtext";
+export type TpMarkupSinglePageLanguage = "html" | "markdown" | "asciidoc" | "restructuredtext" | "latex";
 /**
- * Renders one document with a parser selected from `src` or inline script type.
+ * The custom `<tp-markup-single-page>` element renders one Markdown, AsciiDoc, reStructuredText, LaTeX or HTML document.
  *
+ * @summary Renders one Markdown, AsciiDoc, reStructuredText, LaTeX or HTML document.
  * @tagname tp-markup-single-page
  * @attr {string} src = "" - Source file. The extension selects the renderer.
  * @attr {string | null} toolbar = null - Optional comma-separated controls: code, calc, postit, clock, lang, color, theme, screen, fullscreen. Empty enables all; absent hides the toolbar.
@@ -14,7 +15,7 @@ export type TpMarkupSinglePageLanguage = "html" | "markdown" | "asciidoc" | "res
  * @attr {string} label = "" - Text displayed in the center of the optional toolbar.
  * @attr {string} langs = "en" - Candidate document languages. The first uses the source directory; others use language subdirectories.
  * @event tp-markup-single-page-rendered Emitted after the selected renderer completes.
- * @eventdetail tp-markup-single-page-rendered { language: "html" | "markdown" | "asciidoc" | "restructuredtext"; src: string }
+ * @eventdetail tp-markup-single-page-rendered { language: "html" | "markdown" | "asciidoc" | "restructuredtext" | "latex"; src: string }
  * @example
  * <tp-markup-single-page>
  *   <script type="tp/markdown">
@@ -64,6 +65,12 @@ export declare class TpMarkupSinglePage extends TpBase {
     set git(value: string);
     private updateGit;
     /**
+     * Website opened in the current tab when activating the toolbar logo. Defaults to ./ when omitted or empty.
+     * @attr logo-href
+     */
+    get logoHref(): string;
+    set logoHref(value: string);
+    /**
      * @summary Logo URL displayed at the start of the toolbar, at the default icon-button size. Empty hides the logo.
      * @attr logo
      * @default ""
@@ -75,6 +82,7 @@ export declare class TpMarkupSinglePage extends TpBase {
     private updateLabel;
     private disposeToolbar;
     private renderToolbar;
+    private updateNavbar;
     /** Resolve the authored source for the currently selected generated page. */
     private getOriginalSource;
     private updateLanguages;

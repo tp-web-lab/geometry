@@ -42,7 +42,9 @@ declare const fieldClasses: {
 };
 type BlankType = keyof typeof fieldClasses;
 /**
- * @summary displays a text, SVG or image answer in a focusable blank.
+ * The custom `<tp-blank>` element provides an answer slot for text, images or drawings.
+ *
+ * @summary Provides an answer slot for text, images or drawings.
  * @tagname tp-blank
  * @attr {string} aria-label = "" - Accessible name forwarded to the editing control; use it when the field has no visible label.
  * @attr {boolean} closed = false - Uses an answer-bank destination unless the question overrides the mode.
@@ -50,10 +52,29 @@ type BlankType = keyof typeof fieldClasses;
  * @attr {string} name = "" - Name used by tp-fill-blank form data.
  * @attr {string} placeholder = "…" - Text displayed while the blank is empty.
  * @attr {boolean} disabled = false - Disables interaction.
-
+ *
  * @example
- * <tp-blank name="result" aria-label="Expected result"></tp-blank>
- * @cssprop [--tp-blank-filled-border-color=var(--tp-brand-stroke-mid)] Bottom border color of a blank after an answer has been filled in.
+ * <tp-fill-blank-question mode="closed">
+ *   <dl>
+ *     <dt>Title</dt><dd>Match the answers</dd>
+ *     <dt>Prompt</dt><dd>Choose an answer for each blank.</dd>
+ *     <dt>Answers</dt>
+ *     <dd><ol>
+ *       <li>Paris</li>
+ *       <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="40" viewBox="0 0 48 40" role="img" aria-label="Triangle"><path d="M24 3 45 37H3Z" fill="none" stroke="currentColor" stroke-width="3"></path></svg></li>
+ *       <li><img src="/docs/medias/logos/logo-tp.svg" alt="tp-components logo" width="40" height="40"></li>
+ *     </ol></dd>
+ *     <dt>Form</dt>
+ *     <dd>
+ *       <p>The capital of France: <tp-blank name="capital" aria-label="Capital of France"></tp-blank></p>
+ *       <p>A shape with three sides: <tp-blank name="shape" aria-label="Three-sided shape"></tp-blank></p>
+ *       <p>The library logo: <tp-blank name="logo" aria-label="Library logo"></tp-blank></p>
+ *     </dd>
+ *     <dt>Feedback</dt><dd>Match each answer to its description.</dd>
+ *     <dt>Solution</dt><dd>Paris; the triangle; the tp-components logo.</dd>
+ *   </dl>
+ * </tp-fill-blank-question>
+ *  @cssprop [--tp-blank-filled-border-color=var(--tp-brand-stroke-mid)] Bottom border color of a blank after an answer has been filled in.
  * @event input Emitted when an answer is assigned or cleared; read the updated answer from value.
  * @eventdetail input void
  * @event tp-blank-mode-change Emitted when closed or type changes while connected, after the blank has been rendered in its new mode.

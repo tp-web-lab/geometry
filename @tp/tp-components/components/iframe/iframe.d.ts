@@ -4,14 +4,9 @@
  */
 import { TpBase } from "../base/base.js";
 /**
- * Affiche un `iframe` natif encapsulé dans un composant sans Shadow DOM,
- * avec prise en charge de :
- * - `src`
- * - `srcdoc`
- * - zoom
- * - sandbox
- * - interaction
+ * The custom `<tp-iframe>` element embeds a web page or HTML content within the current page.
  *
+ * @summary Embeds a web page or HTML content within the current page.
  * @tagname tp-iframe
  * @attr {boolean} controls = false - Shows the internal toolbar for zoom and frame actions; controls="false" hides it.
  *
@@ -26,12 +21,12 @@ import { TpBase } from "../base/base.js";
  * @attr {string} zoom-levels = "25% 50% 75% 100% 125% 150% 175% 200%" - Space-separated zoom choices offered in the toolbar, expressed as percentages, for example 50% 100% 150%.
  *
  *
-
-
+ *
+ *
  *
  * @example
- * <tp-iframe></tp-iframe>
- * @cssprop [--tp-iframe-zoom=1] Unitless scale factor applied to iframe content (1 means 100%); synchronized with the zoom attribute.
+ * <tp-iframe src="/docs/components/iframe/examples/welcome.html" title="A document inside an iframe" style="height: 12rem;"></tp-iframe>
+ *  @cssprop [--tp-iframe-zoom=1] Unitless scale factor applied to iframe content (1 means 100%); synchronized with the zoom attribute.
  * @event tp-iframe-change Emitted when zoom, interaction or horizontal viewport state is refreshed. overflowWidth and scrollPosition are in CSS pixels, zoom is a scale factor, and zoomText is its percentage label.
  * @eventdetail tp-iframe-change { interaction: boolean; overflowWidth: number; scrollPosition: number; zoom: number; zoomText: string }
  * @event tp-iframe-load Emitted after the inner iframe loads and its layout is refreshed. contentHeight is in CSS pixels (0 when inaccessible), hasSrcdoc indicates inline content, and src is the configured URL.

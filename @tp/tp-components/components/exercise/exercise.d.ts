@@ -30,12 +30,14 @@ import { TpBase } from "../base/base.js";
 import "../icon/icon.js";
 import "../question/question.js";
 /**
- * @summary Groups a shared context and an ordered list of independent questions.
+ * The custom `<tp-exercise>` element groups a shared context and an ordered list of questions, with an optional countdown for the whole activity.
+ *
+ * @summary Groups a shared context and an ordered list of questions, with an optional countdown for the whole activity.
  * @tagname tp-exercise
  * @attr {boolean} open = false - Initially expand the exercise.
  * @attr {string} timing = "" - Optional nonzero time limit in strict hh:mm:ss format.
  * @example
- * <tp-exercise open>
+ * <tp-exercise open="">
  *   <dl>
  *     <dt>Title</dt><dd>A day at the museum</dd>
  *     <dt>Context</dt><dd>The museum opens at 9 a.m. Admission costs 8 euros.</dd>
@@ -57,7 +59,7 @@ import "../question/question.js";
  *     </ol></dd>
  *   </dl>
  * </tp-exercise>
- * @accessibility Uses native details and summary for disclosure, preserves the authored title content and ordered questions, and hides the decorative title icon from assistive technology.
+ *  @accessibility Uses native details and summary for disclosure, preserves the authored title content and ordered questions, and hides the decorative title icon from assistive technology.
  * @accessibility Timed exercises use labelled start controls and tp-mask to make unavailable question content inert; individual questions retain their own controls and feedback.
  * @accessibilityresponsibility Provide a descriptive title, clear instructions and accessible question content. Offer an untimed alternative or appropriate accommodation when imposing a countdown.
  */

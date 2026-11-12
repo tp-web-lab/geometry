@@ -46,11 +46,13 @@ export type TpAnalogMeasurementMode = "voltage" | "current";
 export declare function validateAnalogCircuit(graph: Readonly<TpGraphDocument>): void;
 export declare function simulateAnalogCircuit(graph: Readonly<TpGraphDocument>, duration?: number, step?: number, measurementMode?: TpAnalogMeasurementMode): TpAnalogSimulation;
 /**
- * @summary Interactive analog-circuit editor and transient simulator.
+ * The custom `<tp-graph-analog-circuit>` element provides an interactive analog-circuit editor and transient simulator.
+ *
+ * @summary Provides an interactive analog-circuit editor and transient simulator.
  * @tagname tp-graph-analog-circuit
  * @example
- * <tp-graph-analog-circuit></tp-graph-analog-circuit>
- * @event tp-analog-simulate Emitted after transient simulation completes and updates the graph. samples contains time/value records keyed by measurement label or probe label/ID; time, duration and step are in seconds, with voltage in volts and current in amperes.
+ * <tp-graph-analog-circuit grid="" grid-size="20" message="Run the transient analysis and inspect Vin and Vout." src="/docs/components/graph-analog-circuit/examples/rc-filter.json"></tp-graph-analog-circuit>
+ *  @event tp-analog-simulate Emitted after transient simulation completes and updates the graph. samples contains time/value records keyed by measurement label or probe label/ID; time, duration and step are in seconds, with voltage in volts and current in amperes.
  * @eventdetail tp-analog-simulate { samples: readonly TpAnalogSample[]; duration: number; step: number }
  */
 export declare class TpGraphAnalogCircuit extends TpGraphEditor {

@@ -34,7 +34,9 @@ export type TpMatchingValue = TpMatchingPair[] | TpMatchingGroup[];
 /** Validates and copies a snapshot without changing the component state. */
 export declare function normalizeMatchingValue(value: unknown, columns: number, count: number, complete?: boolean): TpMatchingGroup[] | null;
 /**
- * @summary associates rich content from two or more optionally titled lists without grading the groups.
+ * The custom `<tp-matching>` element groups related items from two or more lists.
+ *
+ * @summary Groups related items from two or more lists.
  * @tagname tp-matching
  * @attr {boolean} heading = false - Uses the first list as column headings instead of matchable items.
  * @attr {boolean} disabled = false - Disables association controls without disabling embedded media.
@@ -49,7 +51,7 @@ export declare function normalizeMatchingValue(value: unknown, columns: number, 
  *   <ul><li>Hello</li><li>Thank you</li><li>Goodbye</li></ul>
  *   <ol><li>Bonjour</li><li>Merci</li><li>Au revoir</li></ol>
  * </tp-matching>
- * @cssprop [--tp-matching-columns=2] Number of equal-width matching columns; set internally from the number of lists. Narrow-screen styles force two columns, then one.
+ *  @cssprop [--tp-matching-columns=2] Number of equal-width matching columns; set internally from the number of lists. Narrow-screen styles force two columns, then one.
  */
 export declare class TpMatching extends TpBase {
     /** Unique heading identifiers across instances. */

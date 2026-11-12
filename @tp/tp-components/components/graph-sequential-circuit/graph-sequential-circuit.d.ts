@@ -17,11 +17,13 @@ export declare const TP_LOGIC_T_FLIP_FLOP = "logic-t-flip-flop";
 export declare function validateSequentialCircuit(graph: Readonly<TpGraphDocument>): void;
 export declare function evaluateSequentialCombinational(graph: Readonly<TpGraphDocument>): TpGraphDocument;
 /**
+ * The custom `<tp-graph-sequential-circuit>` element edits and simulates synchronous sequential logic circuits.
+ *
  * @summary Edits and simulates synchronous sequential logic circuits.
  * @tagname tp-graph-sequential-circuit
  * @example
- * <tp-graph-sequential-circuit></tp-graph-sequential-circuit>
- * @event tp-logic-toggle Emitted after an input node is toggled; id identifies the input, value is its new Boolean level, and graph contains the resulting snapshot.
+ * <tp-graph-sequential-circuit id="sequential-counter" grid="" grid-size="20" message="Hubs distribute CLK, Q0, and Q1 along separate orthogonal lanes." src="/docs/components/graph-sequential-circuit/examples/two-bit-counter.json"></tp-graph-sequential-circuit>
+ *  @event tp-logic-toggle Emitted after an input node is toggled; id identifies the input, value is its new Boolean level, and graph contains the resulting snapshot.
  * @eventdetail tp-logic-toggle { id: string; value: boolean; graph: TpGraphDocument }
  * @event tp-logic-evaluate Emitted after combinational outputs are recomputed without advancing the clock; graph contains the resulting snapshot.
  * @eventdetail tp-logic-evaluate { graph: TpGraphDocument }

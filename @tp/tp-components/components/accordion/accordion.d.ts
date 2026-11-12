@@ -12,7 +12,7 @@
 import { TpBase } from "../base/base.js";
 export type TpAccordionAppearance = "default" | "outlined" | "filled";
 /**
- * Accessible accordion web component based on light-DOM `<dl>` markup.
+ * The custom `<tp-accordion>` element organizes content into sections that readers can expand and collapse.
  *
  * Expected structure:
  *
@@ -38,6 +38,7 @@ export type TpAccordionAppearance = "default" | "outlined" | "filled";
  * - `open-indexes`: space-separated list of expanded item indexes
  * - `appearance`: visual treatment (`default`, `outlined`, or `filled`)
  *
+ * @summary Organizes content into sections that readers can expand and collapse.
  * @tagname tp-accordion
  * @attr {TpAccordionAppearance} appearance = "default" - Visual treatment of accordion items.
  * @cssprop --tp-accordion-content-gap Gap between an accordion heading and its content.
@@ -52,12 +53,12 @@ export type TpAccordionAppearance = "default" | "outlined" | "filled";
  * @keyboard {Enter / Space} Expands or collapses the focused section.
  * @example
  * <tp-accordion open-indexes="1">
- *   <dl>
- *     <dt>What is HTML?</dt><dd>The language used to structure web pages.</dd>
- *     <dt>What is CSS?</dt><dd>The language used to style web pages.</dd>
- *     <dt>What is Javascript?</dt><dd>The language used to define the behaviour of web pages.</dd>
- *   </dl>
- * </tp-accordion>
+ *     <dl>
+ *       <dt>What is HTML?</dt><dd>The language used to structure web pages.</dd>
+ *       <dt>What is CSS?</dt><dd>The language used to style web pages.</dd>
+ *       <dt>What is Javascript?</dt><dd>The language used to define the behaviour of web pages.</dd>
+ *     </dl>
+ *     </tp-accordion>
  */
 export declare class TpAccordion extends TpBase {
     /**

@@ -52,8 +52,7 @@
  */
 import { TpBase } from "../base/base.js";
 /**
- * Web component for interactive crossword puzzles.
- * Uses lightDOM to parse definition list and initialize game.
+ * The custom `<tp-crossword>` element displays an interactive crossword puzzle.
  *
  * @summary Displays an interactive crossword puzzle.
  * @tagname tp-crossword
@@ -64,35 +63,11 @@ import { TpBase } from "../base/base.js";
  *
  * @example
  * <tp-crossword>
- * <dl>
- *   <dt>solution</dt>
- *   <dd>
- *     <ol>
- *       <li>BALL</li>
- *       <li>AREA</li>
- *       <li>LEAD</li>
- *       <li>LADY</li>
- *     </ol>
- *    </dd>
- *   <dt>across</dt>
- *   <dd>
- *     <ol>
- *       <li>A. A round toy used in many sports</li>
- *       <li>B. The size of a surface</li>
- *       <li>C. A heavy metal</li>
- *       <li>D. A polite word for a woman</li>
- *     </ol>
- *   </dd>
- *   <dt>down</dt>
- *   <dd>
- *     <ol>
- *       <li>1. A round toy used in many sports</li>
- *        <li>2. The size of a surface</li>
- *        <li>3. A heavy metal</li>
- *        <li>4. A polite word for a woman</li>
- *      </ol>
- *    </dd>
- *  </dl>
+ *   <dl>
+ *     <dt>solution</dt><dd><ol><li>BALL</li><li>AREA</li><li>LEAD</li><li>LADY</li></ol></dd>
+ *     <dt>across</dt><dd><ol><li>A. A round toy used in many sports</li><li>B. The size of a surface</li><li>C. A heavy metal</li><li>D. A polite word for a woman</li></ol></dd>
+ *     <dt>down</dt><dd><ol><li>1. A round toy used in many sports</li><li>2. The size of a surface</li><li>3. A heavy metal</li><li>4. A polite word for a woman</li></ol></dd>
+ *   </dl>
  * </tp-crossword>
  */
 export declare class TpCrossword extends TpBase {

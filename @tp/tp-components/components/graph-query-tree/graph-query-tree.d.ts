@@ -22,11 +22,12 @@ export declare const TP_QUERY_EDGE = "query-edge";
 export declare function validateQueryTree(graph: Readonly<TpGraphDocument>): void;
 export declare function queryTreeToSql(graph: Readonly<TpGraphDocument>): string;
 /**
- * Relational query-tree specialization of `<tp-graph-editor>`.
+ * The custom `<tp-graph-query-tree>` element edits relational algebra trees and generates equivalent SQL.
+ *
  * @summary Edits relational algebra trees and generates equivalent SQL.
  * @tagname tp-graph-query-tree
  * @example
- * <tp-graph-query-tree></tp-graph-query-tree>
+ * <tp-graph-query-tree grid="" grid-size="20" message="Select an operator to edit its relational expression." src="/docs/components/graph-query-tree/examples/employees-departments.json"></tp-graph-query-tree>
  */
 export declare class TpGraphQueryTree extends TpGraphEditor {
     private static readonly queryStyleId;

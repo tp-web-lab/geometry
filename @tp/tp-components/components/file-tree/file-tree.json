@@ -2,11 +2,11 @@
   "tagname": "tp-file-tree",
   "classname": "TpFileTree",
   "superclass": "TpBase",
-  "description": "Arbre spécialisé pour fichiers et dossiers.",
+  "description": "Displays folders and files as an expandable tree.",
   "examples": [
     {
       "label": "Example 1",
-      "code": "<tp-file-tree></tp-file-tree>"
+      "code": "<tp-box data-intro-action=\"file-tree\" data-allow-script=\"\">\n  <p>Expand the folders and select a file in this in-memory example.</p>\n  <tp-file-tree></tp-file-tree>\n  <p data-demo-status=\"\" role=\"status\">Select a file to see its path.</p>\n  <script src=\"/docs/components/_shared/introduction-actions.js\"></script>\n</tp-box>"
     }
   ],
   "attributes": [],
@@ -65,51 +65,61 @@
   "events": [
     {
       "name": "tp-file-tree-active",
+      "emitted": true,
       "description": "Emitted when selecting a file makes it active; path identifies the file. Selecting an already active file can emit it again.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-file-tree-add-request",
+      "emitted": true,
       "description": "Requests creation of a file or directory; path is the target path, or null for the root, and kind specifies the entry type. The consumer performs the creation.",
       "detail": "{ path: string | null; kind: \"file\" | \"directory\" }"
     },
     {
       "name": "tp-file-tree-clone-request",
+      "emitted": true,
       "description": "Requests duplication of the entry at path; the consumer performs the copy.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-file-tree-copy-request",
+      "emitted": true,
       "description": "Requests copying the selected path to the clipboard; the consumer performs the copy.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-file-tree-delete-request",
+      "emitted": true,
       "description": "Requests deletion of the entry at path; the consumer performs the deletion.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-file-tree-global-action",
+      "emitted": true,
       "description": "Emitted when a global context-menu action is chosen; actionId contains its identifier.",
       "detail": "{ actionId: \"expand-all\" | \"collapse-all\" | \"toggle-guides\" }"
     },
     {
       "name": "tp-file-tree-move-request",
+      "emitted": true,
       "description": "Requests moving sourcePath relative to destinationPath at position; a null destination denotes the root. The consumer performs the move.",
       "detail": "{ sourcePath: string; destinationPath: string | null; position: \"inside\" | \"before\" | \"after\" }"
     },
     {
       "name": "tp-file-tree-open",
+      "emitted": true,
       "description": "Emitted when a file is selected for opening; path identifies the file. Selecting an already open file can emit it again.",
       "detail": "{ path: string }"
     },
     {
       "name": "tp-file-tree-rename-request",
+      "emitted": true,
       "description": "Requests renaming the entry at path to newName; the consumer performs the rename.",
       "detail": "{ path: string; newName: string }"
     },
     {
       "name": "tp-file-tree-select",
+      "emitted": true,
       "description": "Emitted after a file or directory row is selected; path identifies the selected entry.",
       "detail": "{ path: string }"
     }
@@ -158,8 +168,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "File Tree",
-    "introduction": "The custom `<tp-file-tree>` element implements the <tp-icon name=\"file-tree\" library=\"components\" size=\"1.25em\"></tp-icon> File Tree functionality: arbre spécialisé pour fichiers et dossiers.",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Expand or collapse branches to inspect nested items. |\n| Select | Select available links or entries to use the actions provided by the surrounding page. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| Focused controls | Use each control’s standard keyboard interaction.  |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-file-tree>` element displays folders and files as an expandable tree.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Using the component | Expand or collapse branches to inspect nested items. |\n| Select | Select available links or entries to use the actions provided by the surrounding page. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| Focused controls | Use each control’s standard keyboard interaction.  |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": []
   }
 }

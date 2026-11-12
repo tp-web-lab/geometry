@@ -10,10 +10,11 @@ import { TpBase } from "../base/base.js";
 type TpAnimationTrigger = "load" | "click" | "hover" | "manual" | "intersection";
 type AnimationFillMode = "none" | "forwards" | "backwards" | "both";
 /**
- * `<tp-animation>` applique une animation à une cible du DOM léger.
+ * The custom `<tp-animation>` element animates a target element and provides playback controls.
  *
  * Le composant utilise animate.css pour les noms d'animation
  * et WAAPI pour le contrôle de lecture.
+ * @summary Animates a target element and provides playback controls.
  * @tagname tp-animation
  * @attr {string} threshold = "0.1" - Visibility thresholds for the intersection trigger: one number from 0 to 1, or a comma-separated list. Invalid entries are ignored; the fallback is 0.1.
  * @attr {string} root-margin = "0px" - Viewport margin for the intersection trigger, using CSS margin syntax such as 100px or 0px 0px -20% 0px.
@@ -34,8 +35,10 @@ type AnimationFillMode = "none" | "forwards" | "backwards" | "both";
  * @accessibilityresponsibility Prefer a native interactive element, such as a button, for a click-triggered animation.
  * @keyboard {Enter / Space} Starts a click-triggered animation when its target is not a native control.
  * @example
- * <tp-animation></tp-animation>
- * @event tp-animation-start Emitted when an entrance or exit animation starts, including when immediately paused. The detail identifies the configured animation names and the phase.
+ * <tp-animation in="fadeIn" trigger="load" duration="800ms">
+ *     <tp-box>Animated content</tp-box>
+ *   </tp-animation>
+ *  @event tp-animation-start Emitted when an entrance or exit animation starts, including when immediately paused. The detail identifies the configured animation names and the phase.
  * @eventdetail tp-animation-start { in: string; out: string; phase: "in" | "out" }
  * @event tp-animation-finish Emitted after an entrance or exit animation finishes normally; cancellation does not emit finish. The detail identifies the configured animation names and the phase.
  * @eventdetail tp-animation-finish { in: string; out: string; phase: "in" | "out" }

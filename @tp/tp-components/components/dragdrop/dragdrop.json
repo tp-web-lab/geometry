@@ -2,11 +2,11 @@
   "tagname": "tp-dragdrop",
   "classname": "TpDragdrop",
   "superclass": "TpBase",
-  "description": "provides a generic drag-and-drop controller.",
+  "description": "Enables content to be dragged and dropped between locations.",
   "examples": [
     {
       "label": "Example 1",
-      "code": "<tp-box id=\"dragdrop-board\" data-dragdrop-demo data-allow-script>\n  <p>Drag a task to <strong>To do</strong> or <strong>Done</strong>, including an empty column. The Move button sends a task to the other column without dragging.</p>\n  <p>Keyboard: focus a card, press Enter, use the arrow keys to choose another card, then press Enter to drop before or after it. Escape cancels.</p>\n  <tp-grid min-width=\"16rem\" gap=\"1rem\">\n    <tp-box data-zone=\"To do\" role=\"group\" aria-label=\"To do\" style=\"min-height: 12rem;\">\n      <h3>To do</h3>\n      <tp-stack gap=\"0.5rem\" data-tasks>\n        <tp-box data-task aria-label=\"Write the introduction\"><p>Write the introduction</p><tp-button data-move size=\"s\" aria-label=\"Move Write the introduction to the other column\">Move</tp-button></tp-box>\n        <tp-box data-task aria-label=\"Review the examples\"><p>Review the examples</p><tp-button data-move size=\"s\" aria-label=\"Move Review the examples to the other column\">Move</tp-button></tp-box>\n      </tp-stack>\n    </tp-box>\n    <tp-box data-zone=\"Done\" role=\"group\" aria-label=\"Done\" style=\"min-height: 12rem;\">\n      <h3>Done</h3>\n      <tp-stack gap=\"0.5rem\" data-tasks>\n        <tp-box data-task aria-label=\"Choose a title\"><p>Choose a title</p><tp-button data-move size=\"s\" aria-label=\"Move Choose a title to the other column\">Move</tp-button></tp-box>\n      </tp-stack>\n    </tp-box>\n  </tp-grid>\n  <p data-demo-status role=\"status\" aria-live=\"polite\">Move a task to change its column.</p>\n  <tp-dragdrop root=\"#dragdrop-board\" items=\"[data-task]\"></tp-dragdrop>\n  <script src=\"/docs/components/dragdrop/examples/task-board.js\"></script>\n</tp-box>"
+      "code": "<tp-box id=\"dragdrop-board\" data-dragdrop-demo=\"\" data-allow-script=\"\">\n  <p>Drag a task to <strong>To do</strong> or <strong>Done</strong>, including an empty column. The Move button sends a task to the other column without dragging.</p>\n  <p>Keyboard: focus a card, press Enter, use the arrow keys to choose another card, then press Enter to drop before or after it. Escape cancels.</p>\n  <tp-grid min-width=\"16rem\" gap=\"1rem\">\n    <tp-box data-zone=\"To do\" role=\"group\" aria-label=\"To do\" style=\"min-height: 12rem;\">\n      <h3>To do</h3>\n      <tp-stack gap=\"0.5rem\" data-tasks=\"\">\n        <tp-box data-task=\"\" aria-label=\"Write the introduction\"><p>Write the introduction</p><tp-button data-move=\"\" size=\"s\" aria-label=\"Move Write the introduction to the other column\">Move</tp-button></tp-box>\n        <tp-box data-task=\"\" aria-label=\"Review the examples\"><p>Review the examples</p><tp-button data-move=\"\" size=\"s\" aria-label=\"Move Review the examples to the other column\">Move</tp-button></tp-box>\n      </tp-stack>\n    </tp-box>\n    <tp-box data-zone=\"Done\" role=\"group\" aria-label=\"Done\" style=\"min-height: 12rem;\">\n      <h3>Done</h3>\n      <tp-stack gap=\"0.5rem\" data-tasks=\"\">\n        <tp-box data-task=\"\" aria-label=\"Choose a title\"><p>Choose a title</p><tp-button data-move=\"\" size=\"s\" aria-label=\"Move Choose a title to the other column\">Move</tp-button></tp-box>\n      </tp-stack>\n    </tp-box>\n  </tp-grid>\n  <p data-demo-status=\"\" role=\"status\" aria-live=\"polite\">Move a task to change its column.</p>\n  <tp-dragdrop root=\"#dragdrop-board\" items=\"[data-task]\"></tp-dragdrop>\n  <script src=\"/docs/components/dragdrop/examples/task-board.js\"></script>\n</tp-box>"
     }
   ],
   "attributes": [
@@ -42,21 +42,25 @@
   "events": [
     {
       "name": "tp-dragdrop-drop",
+      "emitted": true,
       "description": "Emitted when a drop is requested by pointer or keyboard. The consumer must move source relative to target at position; the component does not move it automatically.",
       "detail": "{ source: HTMLElement; target: HTMLElement | null; position: \"before\" | \"inside\" | \"after\" | null }"
     },
     {
       "name": "tp-dragdrop-end",
+      "emitted": true,
       "description": "Emitted when a drag ends or a keyboard drag is cancelled.",
       "detail": "void"
     },
     {
       "name": "tp-dragdrop-over",
+      "emitted": true,
       "description": "Emitted when the proposed target or relative insertion position changes; source and target identify HTML elements.",
       "detail": "{ source: HTMLElement; target: HTMLElement | null; position: \"before\" | \"inside\" | \"after\" | null }"
     },
     {
       "name": "tp-dragdrop-start",
+      "emitted": true,
       "description": "Emitted when an item is grabbed by pointer or keyboard; source is the dragged HTML element.",
       "detail": "{ source: HTMLElement }"
     }
@@ -71,8 +75,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "Drag and drop",
-    "introduction": "The custom `<tp-dragdrop>` element implements the <tp-icon name=\"dragdrop\" library=\"components\" size=\"1.25em\"></tp-icon> Drag and drop functionality: provides a generic drag-and-drop controller.",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Drag an item | Move it to another accepting area, including an empty column. |\n| Drop near an item edge | Insert before or after that item. |\n| Move button in the example | Move the card to the other column without dragging; also usable on touch devices. |\n| Status message | Confirms the new location. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> on an item | Grab the item; press again to drop it. |\n| <kbd>←</kbd>/<kbd>↑</kbd>/<kbd>→</kbd>/<kbd>↓</kbd> while grabbed | Choose the target item. |\n| <kbd>Escape</kbd> | Cancel dragging. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> on Move | Move the card to the other column, including when it is empty. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-dragdrop>` element enables content to be dragged and dropped between locations.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Drag an item | Move it to another accepting area, including an empty column. |\n| Drop near an item edge | Insert before or after that item. |\n| Move button in the example | Move the card to the other column without dragging; also usable on touch devices. |\n| Status message | Confirms the new location. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between the available controls. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> on an item | Grab the item; press again to drop it. |\n| <kbd>←</kbd>/<kbd>↑</kbd>/<kbd>→</kbd>/<kbd>↓</kbd> while grabbed | Choose the target item. |\n| <kbd>Escape</kbd> | Cancel dragging. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> on Move | Move the card to the other column, including when it is empty. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": [
       {
         "key": "Enter / Space",

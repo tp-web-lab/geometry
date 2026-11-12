@@ -19,7 +19,9 @@ import "../icon-button/icon-button.js";
 import "../button-group/button-group.js";
 import "../typewriting/typewriting.js";
 /**
- * Audio playlist with playback controls and an elapsed-time seek bar.
+ * The custom `<tp-audio-playlist>` element provides an audio playlist with playback controls and an elapsed-time seek bar.
+ *
+ * @summary Provides an audio playlist with playback controls and an elapsed-time seek bar.
  * @tagname tp-audio-playlist
  * @attr {boolean} random = false - Shuffle tracks without repetition; changing this attribute preserves the current track.
  * @attr {string} src = "" - HTML file containing a ul or ol playlist; overrides inline content. Track URLs resolve relative to the file.
@@ -34,7 +36,7 @@ import "../typewriting/typewriting.js";
  * </li>
  * </ol>
  * </tp-audio-playlist>
- * @accessibility Preserves list semantics and keyboard-operable track links, marks the current track with aria-current, and announces status changes.
+ *  @accessibility Preserves list semantics and keyboard-operable track links, marks the current track with aria-current, and announces status changes.
  * @accessibilityresponsibility Supply meaningful track titles and transcripts for spoken content.
  */
 export declare class TpAudioPlaylist extends TpBase {

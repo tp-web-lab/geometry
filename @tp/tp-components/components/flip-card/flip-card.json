@@ -6,7 +6,7 @@
   "examples": [
     {
       "label": "Example 1",
-      "code": "<tp-flip-card></tp-flip-card>"
+      "code": "<tp-flip-card>\n<dl>\n  <dt>recto</dt><dd><p>This is the content <strong>recto...</strong></p></dd>\n  <dt>verso</dt><dd><p>...and here is the content <strong>verso.</strong></p></dd>\n</dl>\n</tp-flip-card>"
     }
   ],
   "attributes": [
@@ -57,6 +57,7 @@
   "events": [
     {
       "name": "tp-flip-card-change",
+      "emitted": true,
       "description": "Emitted when the visible side changes; flipped is true when the back face is visible.",
       "detail": "{ flipped: boolean }"
     }
@@ -111,8 +112,8 @@
   "credits": [],
   "userHelp": {
     "displayName": "Flip card",
-    "introduction": "",
-    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Flip button | Switch between the front and back of the card. |\n| Card without a flip button | Click the card itself to flip it. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Focus the flip control and the visible face to read or scroll its contents. The hidden face is excluded from keyboard navigation. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Flip the focused card or activate its flip button. <kbd>Space</kbd> on the focused face scrolls its content without flipping. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
+    "introduction": "The custom `<tp-flip-card>` element displays a two-sided card.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Flip button | Switch between the front and back of the card. |\n| Card without a flip button | Click the card itself to flip it. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Focus the flip control and the visible face to read or scroll its contents. The hidden face is excluded from keyboard navigation. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Flip the focused card or activate its flip button. <kbd>Space</kbd> on the focused face scrolls its content without flipping. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open User Help for the component under the pointer, or the focused component if none is hovered. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy under the pointer, or around the focused component, then open its help. <kbd>Alt</kbd> is <kbd>Option</kbd> on macOS; include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |",
     "keyboard": []
   }
 }

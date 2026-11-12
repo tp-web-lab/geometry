@@ -20,7 +20,9 @@ import "../button/button.js";
 import "../icon-button/icon-button.js";
 import "../textfield/textfield.js";
 /**
- * @summary Scientific calculator with an editable expression and degree/radian modes.
+ * The custom `<tp-calculator>` element provides a scientific calculator with an editable expression and degree/radian modes.
+ *
+ * @summary Provides a scientific calculator with an editable expression and degree/radian modes.
  * @tagname tp-calculator
  * @attr {"horizontal" | "vertical"} orientation = "horizontal" - Arrangement of the scientific and numeric keypads.
  * @event tp-calculator-result Emitted after a successful calculation.
@@ -29,7 +31,7 @@ import "../textfield/textfield.js";
  * @keyboard {Escape} Clears the expression while its field is focused.
  * @example
  * <tp-calculator></tp-calculator>
- * @accessibility Provides a labelled expression field and labelled keypad buttons; Enter or = evaluates and Escape clears while the field is focused.
+ *  @accessibility Provides a labelled expression field and labelled keypad buttons; Enter or = evaluates and Escape clears while the field is focused.
  * @accessibility Reports results and calculation errors through a status region and marks an invalid expression with aria-invalid.
  * @accessibilityresponsibility Give the calculation a clear context and explain units and angle mode when they affect the expected answer.
  */

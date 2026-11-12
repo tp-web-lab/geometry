@@ -17,7 +17,9 @@ export type TpButtonNativeType = "button" | "submit" | "reset";
  */
 export type TpButtonLoadingMode = "replace" | "inline";
 /**
- * @summary an action button or navigation link with shared sizes, variants and loading states.
+ * The custom `<tp-button>` element provides an action button or navigation link, with configurable appearance and loading feedback.
+ *
+ * @summary Provides an action button or navigation link, with configurable appearance and loading feedback.
  * @tagname tp-button
  * @attr {TpButtonLoadingMode} loading-mode = replace - Spinner layout while loading: replace hides the label; inline keeps the label beside the spinner.
  * @attr {string} variant = "neutral" - Color variant: neutral, brand, success, danger, warning or info.
@@ -31,14 +33,14 @@ export type TpButtonLoadingMode = "replace" | "inline";
  * @attr {string} target = "" - Browsing context for href, such as _self, _blank or a named frame; ignored in native button mode.
  * @attr {string} rel = "" - Space-separated relationship tokens forwarded to the link, for example noopener noreferrer; applies only with href.
  * @attr {string} download = "" - Suggested download filename when href is set. A nonempty value requests a download; browser and server rules determine whether it is honored.
-
+ *
  * @accessibility Uses a native `button` or `a` element according to the configured action.
  * @accessibility Exposes disabled and loading states to assistive technology.
  * @accessibilityresponsibility Provide visible text that describes the action or destination.
  * @keyboard {Enter / Space} Uses the browser's native button activation behavior.
  * @example
  * <tp-button href="/#/components/button/index.md#usage">Read the usage guide</tp-button>
- * @cssprop [--tp-button-accent=var(--tp-neutral-text-colorful)] Accent color used for outlined text and borders, and for the hover border; depends on variant.
+ *  @cssprop [--tp-button-accent=var(--tp-neutral-text-colorful)] Accent color used for outlined text and borders, and for the hover border; depends on variant.
  * @cssprop [--tp-button-background=var(--tp-neutral-fill-loud)] Background color of the button or link; variant and outlined can change it.
  * @cssprop [--tp-button-border-color=var(--tp-neutral-stroke-mid)] Border color of the button or link in its resting state.
  * @cssprop [--tp-button-focus-ring-color=var(--tp-focus-color)] Color of the outer ring shown on keyboard focus and hover.

@@ -28,7 +28,9 @@ import "../note/note.js";
 import "../biblio/biblio.js";
 import "../glossary/glossary.js";
 /**
- * @summary Displays inline references to notes, bibliography and glossary entries with HTML tooltips.
+ * The custom `<tp-ref>` element displays an inline reference with the corresponding HTML content in a tooltip.
+ *
+ * @summary Displays an inline reference with the corresponding HTML content in a tooltip.
  * @tagname tp-ref
  * @attr {string} href = "" - Prefixed identifier selecting a note, bibliography or glossary entry.
  * @keyboard {Enter / Space} Shows the reference tooltip.
@@ -38,7 +40,7 @@ import "../glossary/glossary.js";
  *   <p>A useful detail <tp-ref href="^detail"></tp-ref>.</p>
  *   <tp-note ref="detail" title="Detail"><p>A note with <strong>formatted content</strong>.</p></tp-note>
  * </div>
- * @accessibility Uses a native button supplied by tp-button for the citation; the anchored tp-tooltip supports hover, keyboard focus and activation, and Escape dismissal.
+ *  @accessibility Uses a native button supplied by tp-button for the citation; the anchored tp-tooltip supports hover, keyboard focus and activation, and Escape dismissal.
  * @accessibility Disables unresolved citations and keeps note numbering synchronized with citation order.
  * @accessibilityresponsibility Use meaningful bibliography and glossary identifiers and accessible referenced content. Put essential or interactive material in a persistent tp-listof rather than relying solely on a tooltip.
  */

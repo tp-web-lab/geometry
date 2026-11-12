@@ -14,17 +14,21 @@ import "../symbol-picker/symbol-picker.js";
 import "../theme/theme.js";
 import "../toolbar/toolbar.js";
 /**
- * Rich text editor backed by ProseMirror.
+ * The custom `<tp-prose-editor>` element edits rich text with formatting, lists, tables and embedded media.
  *
- * @summary ProseMirror-based rich text editor.
+ * @summary Edits rich text with formatting, lists, tables and embedded media.
  * @tagname tp-prose-editor
  * @attr {string} placeholder = "Type your prose..." - Text displayed while the editor is empty.
  * @attr {boolean} readonly = false - Prevents the user from editing the prose.
  * @attr {string} src = "" - URL of an external document loaded into the editor.
  * @attr {string} value = "" - Initial HTML content of the editor.
  * @example
- * <tp-prose-editor></tp-prose-editor>
- * @event tp-prose-editor-input Emitted after an editing transaction or editor command updates the document. value contains the current HTML serialization.
+ * <tp-prose-editor>
+ *   <h2>A short editable document</h2>
+ *   <p>Select a word and use the toolbar to change its <strong>formatting</strong>.</p>
+ *   <ul><li>Write a draft</li><li>Review the content</li></ul>
+ * </tp-prose-editor>
+ *  @event tp-prose-editor-input Emitted after an editing transaction or editor command updates the document. value contains the current HTML serialization.
  * @eventdetail tp-prose-editor-input { value: string }
  * @event tp-prose-editor-change Emitted immediately after tp-prose-editor-input for the same edit; it does not wait for blur. value contains the current HTML serialization.
  * @eventdetail tp-prose-editor-change { value: string }

@@ -15,25 +15,21 @@ import { TpBase } from "../base/base.js";
  */
 type TpCheckboxListOrientation = "horizontal" | "vertical";
 /**
- * `<tp-checkbox-list>` turns a plain `<ul>` or `<ol>` into a checkbox list.
+ * The custom `<tp-checkbox-list>` element presents a list of independently selectable choices.
  *
- * @summary Transforms list items into checkbox options.
+ * @summary Presents a list of independently selectable choices.
  * @tagname tp-checkbox-list
  * @attr {string} name = "" - Checkbox group name used on generated inputs.
  * @attr {string} orientation = "vertical" - Item layout direction (`vertical` or `horizontal`).
  * @attr {string} label = "" - Visible accessible group label; no fieldset is created.
  * @attr {string} label-position = "top" - Group label position (`top`, `bottom`, `start`, or `end`).
  * @attr {string} value = "" - Comma-separated 1-based indexes of checked items (e.g. `"2,4"`).
-
+ *
  * @example
- * <tp-checkbox-list value="1,3">
- * <ul>
- * <li>HTML</li>
- * <li>CSS</li>
- * <li>JavaScript</li>
- * </ul>
- * </tp-checkbox-list>
- * @cssprop [--tp-checkbox-list-marker-gap=0.5em] Horizontal space between each selection marker and its item content.
+ * <tp-checkbox-list name="topics" value="1,3">
+ *     <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+ *   </tp-checkbox-list>
+ *  @cssprop [--tp-checkbox-list-marker-gap=0.5em] Horizontal space between each selection marker and its item content.
  * @cssprop [--tp-checkbox-list-marker-width=2ch] Width reserved for each selection marker; aligns the item content in both orientations.
  * @event tp-checkbox-list-change Emitted after a selection change. value contains comma-separated 1-based item indexes; label contains their visible labels joined by comma and space. Both are empty when nothing is selected.
  * @eventdetail tp-checkbox-list-change { value: string; label: string }

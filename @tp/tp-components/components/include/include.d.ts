@@ -6,7 +6,7 @@ import { TpBase } from "../base/base.js";
 type TpIncludeFetchMode = "cors" | "no-cors" | "same-origin";
 type TpIncludeMode = "auto" | "raw";
 /**
- * `<tp-include>` charge un contenu HTML distant et l'injecte dans le DOM léger.
+ * The custom `<tp-include>` element loads remote HTML content.
  *
  * Handling:
  * - document HTML complet → injecte uniquement `<body>`
@@ -27,7 +27,7 @@ type TpIncludeMode = "auto" | "raw";
  * @event tp-include-error Emitted when loading or injecting content fails.
  * @eventdetail tp-include-error { src: string; fetchMode: "cors" | "no-cors" | "same-origin"; allowScripts: boolean; allowStyles: boolean; sanitize: boolean; scriptsExecuted: false; error: string }
  * @example
- * <tp-include></tp-include>
+ * <tp-include src="/docs/components/include/examples/welcome.html" loading="Loading the shared notice…"></tp-include>
  */
 export declare class TpInclude extends TpBase {
     private static readonly styleId;

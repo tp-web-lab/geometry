@@ -75,14 +75,25 @@ export declare function renderAsciidocInto(source: string, root: HTMLElement): P
  */
 export declare function renderAsciidocRuntimeIn(root: ParentNode): Promise<void>;
 /**
- * Renders inline or external AsciiDoc as semantic HTML.
+ * The custom `<tp-asciidoc>` element renders AsciiDoc documents.
  *
+ * @summary Renders AsciiDoc documents.
  * @tagname tp-asciidoc
  * @attr {string} src = "" - URL of an external AsciiDoc source file.
  * @event tp-asciidoc-rendered Emitted after conversion and runtime initialization complete.
  * @eventdetail tp-asciidoc-rendered void
  * @example
- * <tp-box><tp-asciidoc><script type="tp/asciidoc">This paragraph uses *AsciiDoc*.</script></tp-asciidoc></tp-box>
+ * <tp-asciidoc>
+ *   <script type="tp/asciidoc">
+ * == A short document
+ *
+ * This paragraph uses *AsciiDoc*.
+ *
+ * * Write content
+ * * Add components
+ * * Publish the page
+ *   </script>
+ * </tp-asciidoc>
  */
 export declare class TpAsciidoc extends TpBase {
     /** Attributes that trigger a new source load and conversion. */

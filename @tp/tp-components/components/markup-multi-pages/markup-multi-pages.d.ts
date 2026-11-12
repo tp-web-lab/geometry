@@ -70,6 +70,8 @@
  * @tp-dependency tp-tree
  * @summary Generic tree component for interactive hierarchical editing.
  */
+import "../button/button.js";
+import "../icon/icon.js";
 import { TpBase } from "../base/base.js";
 import "../toolbar/toolbar.js";
 import "../calculator/calculator.js";
@@ -84,19 +86,22 @@ import "../theme/theme.js";
 import "../tree/tree.js";
 import "../splitter/splitter.js";
 import type { TpMarkupMultiPagesTheme } from "./markup-multi-pages.types.js";
-export type TpMarkupMultiPagesLanguage = "html" | "markdown" | "asciidoc" | "restructuredtext";
+export type TpMarkupMultiPagesLanguage = "html" | "markdown" | "asciidoc" | "restructuredtext" | "latex";
 /**
- * @summary Multi-page documentation with support for multiple markup languages.
+ * The custom `<tp-markup-multi-pages>` element presents documents in multiple markup languages with navigation between pages.
+ *
+ * @summary Presents documents in multiple markup languages with navigation between pages.
  * @tagname tp-markup-multi-pages
  * @attr {string} repository = "/docs" - Root path containing the sidebar, cover and linked documents. The component selects the corresponding HTML, Markdown, AsciiDoc or reStructuredText files.
+ * @attr {string | null} toolbar = null - Comma-separated controls: home, menu, code, calc, postit, clock, lang, color, theme, screen, fullscreen. Absent or empty keeps all controls; none hides commands. Updates immediately.
  * @attr {boolean} menu = false - Opens the navigation sidebar when present; the toolbar Menu button toggles this attribute.
  * @attr {string} label = "" - Title displayed in the center of the document toolbar.
  * @attr {string} git = "" - Repository URL assigned to the toolbar source link when the document shell is created. Set before connecting the component.
  * @attr {TpMarkupMultiPagesTheme} theme = "" - Legacy light, dark or auto property. Attribute-driven styling is currently inactive; use the toolbar theme control.
  * @attr {string} brand = "tp-default" - Legacy brand preset property, such as tp-default. Attribute-driven styling is currently inactive; use the toolbar color control.
  * @example
- * <tp-markup-multi-pages></tp-markup-multi-pages>
- * @cssprop [--tp-markup-multi-pages-sidebar-width=12rem] Width of the overlay navigation sidebar on narrow screens, capped at 85% of its container; desktop sizing is controlled by the splitter.
+ * <tp-markup-multi-pages repository="/docs/components/markup-multi-pages/docs"></tp-markup-multi-pages>
+ *  @cssprop [--tp-markup-multi-pages-sidebar-width=12rem] Width of the overlay navigation sidebar on narrow screens, capped at 85% of its container; desktop sizing is controlled by the splitter.
  */
 export declare class TpMarkupMultiPages extends TpBase {
     static get observedAttributes(): string[];
@@ -114,6 +119,7 @@ export declare class TpMarkupMultiPages extends TpBase {
     private shellRendered;
     /** Language imposed by a format-specific subclass, or automatic detection. */
     protected get fixedLanguage(): TpMarkupMultiPagesLanguage | null;
+    private stopOrientationObserver;
     protected connectedCallback(): void;
     disconnectedCallback(): void;
     protected attributeChangedCallback(name: string): void;
@@ -123,6 +129,12 @@ export declare class TpMarkupMultiPages extends TpBase {
     set theme(value: TpMarkupMultiPagesTheme);
     get brand(): string;
     set brand(value: string);
+    /**
+     * Website opened in the current tab when activating the toolbar logo. Defaults to ./ when omitted or empty.
+     * @attr logo-href
+     */
+    get logoHref(): string;
+    set logoHref(value: string);
     /**
      * @summary Logo URL displayed at the start of the toolbar, at the default icon-button size. Empty hides the logo.
      * @attr logo
@@ -140,6 +152,9 @@ export declare class TpMarkupMultiPages extends TpBase {
     get menu(): boolean;
     set menu(value: boolean);
     private applyLabel;
+    /** Selects toolbar controls; null restores the full default toolbar. */
+    get toolbar(): string | null;
+    set toolbar(value: string | null);
     private applyLangs;
     private applyDocumentLocale;
     private resolveCurrentLang;

@@ -10,7 +10,7 @@ import { TpBase } from "../base/base.js";
 import { type TpSizeType, type TpVariantType } from "../base/base.types.js";
 type TpThemeMode = "light" | "dark" | "auto";
 /**
- * `<tp-theme>` controls the visual theme of its parent element.
+ * The custom `<tp-theme>` element switches the visual theme of the surrounding content.
  *
  * It applies either `.tp-light` or `.tp-dark` on the parent that contains
  * `<tp-theme>`. In `auto` mode, it follows the system color scheme.
@@ -19,7 +19,7 @@ type TpThemeMode = "light" | "dark" | "auto";
  * - a global theme when `<tp-theme>` is a direct child of `<body>`
  * - a local override by placing another `<tp-theme>` inside a nested container
  *
- * @summary Parent-scoped theme switcher.
+ * @summary Switches the visual theme of the surrounding content.
  * @tagname tp-theme
  * @attr {string} mode = "auto" - Theme mode (`light`, `dark`, `auto`)
  * @attr {string} anchor = "" - CSS selector used as the explicit element that receives the selected theme.
@@ -31,8 +31,12 @@ type TpThemeMode = "light" | "dark" | "auto";
  * @event tp-theme-change Emitted when the effective theme applied to a target changes.
  * @eventdetail tp-theme-change { mode: "light" | "dark" | "auto"; theme: "light" | "dark"; anchor: string; target: HTMLElement }
  * @example
- * <tp-theme></tp-theme>
- * @event tp-theme-refresh Emitted when a controller asks other theme controllers to refresh their effective scope; source is the initiating controller and scope is its target element. This is a synchronization notification, distinct from tp-theme-change.
+ * <section>
+ *       <tp-theme></tp-theme>
+ *       <p>The selected theme is scoped to this section.</p>
+ *       <code>Inline code follows the selected theme.</code>
+ *     </section>
+ *  @event tp-theme-refresh Emitted when a controller asks other theme controllers to refresh their effective scope; source is the initiating controller and scope is its target element. This is a synchronization notification, distinct from tp-theme-change.
  * @eventdetail tp-theme-refresh { source: TpTheme; scope: HTMLElement }
  */
 export declare class TpTheme extends TpBase {

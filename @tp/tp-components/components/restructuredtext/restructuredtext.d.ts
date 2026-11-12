@@ -53,11 +53,12 @@ export declare function parseRestructuredTextToAst(source: string): Promise<TpRe
  */
 export declare function renderRestructuredTextInto(source: string, root: HTMLElement): Promise<void>;
 /**
- * Renders inline or external reStructuredText as HTML.
+ * The custom `<tp-restructuredtext>` element renders reStructuredText documents.
  *
  * The browser runtime and the Docutils package are loaded lazily when the first
  * document is rendered.
  *
+ * @summary Renders reStructuredText documents.
  * @tagname tp-restructuredtext
  * @attr {string} src = "" - URL of an external reStructuredText source file.
  * @attr {boolean} doctest = false - Runs standard Python doctest blocks and reports their result.
@@ -67,10 +68,10 @@ export declare function renderRestructuredTextInto(source: string, root: HTMLEle
  * @eventdetail tp-restructuredtext-doctest TpRestructuredTextDoctestResult
  * @example
  * <tp-restructuredtext>
- *       <script type="tp/restructuredtext">
- *         Hello, **Docutils**!
- *       </script>
- *     </tp-restructuredtext>
+ *   <script type="tp/restructuredtext">
+ *     Hello, **Docutils**!
+ *   </script>
+ * </tp-restructuredtext>
  */
 export declare class TpRestructuredText extends TpBase {
     /** Attributes that trigger a new source load and conversion. */

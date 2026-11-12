@@ -39,12 +39,14 @@ import { TpMarkupViewerQuestion } from "../markup-viewer-question/markup-viewer-
 import type { TpRestructuredTextViewer } from "../restructuredtext-viewer/restructuredtext-viewer.js";
 import "../restructuredtext-viewer/restructuredtext-viewer.js";
 /**
- * @summary checks rendered reStructuredText using a viewer and external JavaScript DOM tests.
+ * The custom `<tp-restructuredtext-viewer-question>` element presents and grades exercises based on rendered reStructuredText documents.
+ *
+ * @summary Presents and grades exercises based on rendered reStructuredText documents.
  * @tagname tp-restructuredtext-viewer-question
  * @accessibility Reuses question actions, feedback tabs and the editable markup viewer.
  * @keyboard {Enter / Space} Expands the question or activates a focused action.
  * @example
- * <tp-restructuredtext-viewer-question open src="/docs/components/markup-viewer-question/examples/emphasis.rst" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
+ * <tp-restructuredtext-viewer-question open="" src="/docs/components/markup-viewer-question/examples/emphasis.rst" test="/docs/components/markup-viewer-question/examples/emphasis.test.js">
  *   <dl>
  *     <dt>Title</dt><dd>Semantic emphasis</dd>
  *     <dt>Prompt</dt><dd>Mark Hello with strong emphasis. Open Code to edit, then submit.</dd>

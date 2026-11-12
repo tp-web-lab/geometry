@@ -2,13 +2,15 @@
 import { TpBase } from "../base/base.js";
 import "../callout/callout.js";
 /**
- * @summary creates an HTML table from ordered or unordered lists while preserving cell content.
+ * The custom `<tp-list-table>` element displays structured list content as a table.
+ *
+ * @summary Displays structured list content as a table.
  * @tagname tp-list-table
  * @attr {boolean} heading = false - Uses the first row as column headings.
  * @accessibility Uses native table structure and th scope="col" for the optional heading row; embedded controls keep their own interactions.
  * @accessibilityresponsibility Provide meaningful column headings and accessible names for rich cell content.
  * @example
- * <tp-list-table heading>
+ * <tp-list-table heading="">
  *   <ul>
  *     <li><ul><li>Country</li><li>Capital</li></ul></li>
  *     <li><ul><li>Estonia</li><li>Tallinn</li></ul></li>

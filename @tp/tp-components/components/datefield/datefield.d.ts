@@ -6,7 +6,9 @@ import "../icon-button/icon-button.js";
 import { TpBase } from "../base/base.js";
 export type TpDatefieldLabelPosition = "top" | "bottom" | "start" | "end";
 /**
- * @summary Native date field with labels, constraints, picker access, and clearing.
+ * The custom `<tp-datefield>` element collects a date within optional limits.
+ *
+ * @summary Collects a date within optional limits.
  * @tagname tp-datefield
  * @attr {string} label = "" - Visible label associated with the native date input.
  * @attr {string} label-position = "top" - Label position (`top`, `bottom`, `start`, or `end`).
@@ -25,8 +27,8 @@ export type TpDatefieldLabelPosition = "top" | "bottom" | "start" | "end";
  * @event change Emitted when the selected date is committed.
  * @event tp-clear Emitted after the embedded button clears the value.
  * @example
- * <tp-datefield label="Date" value="2026-09-03" clearable></tp-datefield>
- * @cssprop [--tp-datefield-background=var(--tp-paper-color)] Background of the input control, excluding its label.
+ * <tp-datefield label="Date" value="2026-09-03" clearable=""></tp-datefield>
+ *  @cssprop [--tp-datefield-background=var(--tp-paper-color)] Background of the input control, excluding its label.
  * @cssprop [--tp-datefield-border-color=var(--tp-neutral-stroke-soft)] Border color of the input control when it is not focused.
  * @cssprop [--tp-datefield-focus-color=var(--tp-brand-text-colorful)] Border color and translucent outline tint while focus is inside the control.
  * @cssprop [--tp-datefield-inline-size=12.5em] Preferred width of the field, limited by the available container width.

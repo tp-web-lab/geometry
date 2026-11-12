@@ -1,0 +1,83 @@
+{
+  "tagname": "tp-latex-viewer",
+  "classname": "TpLatexViewer",
+  "superclass": "TpMarkupViewer",
+  "description": "Presents editable LaTeX examples with rendered and generated HTML views.",
+  "examples": [
+    {
+      "label": "Example 1",
+      "code": "<tp-latex-viewer><script type=\"tp/latex\">\\section{Hello}A formula $x^2$.</script></tp-latex-viewer>"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "allow-script",
+      "description": "Executes scripts in the generated HTML preview.",
+      "reflected": true,
+      "static": false,
+      "inherited": false,
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "lite",
+      "description": "Compact viewer with rendered output.",
+      "reflected": false,
+      "static": false,
+      "inherited": false,
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "name": "src",
+      "description": "Comma-separated URLs of LaTeX example files.",
+      "reflected": false,
+      "static": false,
+      "inherited": false,
+      "type": "string",
+      "default": "\"\""
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "cssproperties": [],
+  "dependencies": [
+    {
+      "name": "tp-base",
+      "summary": "Shared base class for tp-* components."
+    },
+    {
+      "name": "tp-divider",
+      "summary": "Visual separator for menus, dropdowns, toolbars, and layouts."
+    },
+    {
+      "name": "tp-html-viewer",
+      "summary": "Interactive HTML viewer with editable source, live rendering, and DOM inspection."
+    },
+    {
+      "name": "tp-icon",
+      "summary": "SVG icon component with inline, URL, and registry sources."
+    },
+    {
+      "name": "tp-icon-button",
+      "summary": "Accessible icon button component."
+    },
+    {
+      "name": "tp-switcher",
+      "summary": "Switches between horizontal and vertical layouts based on available space."
+    }
+  ],
+  "credits": [
+    {
+      "name": "tp-latex",
+      "url": "https://www.npmjs.com/package/@tp/tp-latex",
+      "summary": "LaTeX.js conversion and patched TikZJax assets."
+    }
+  ],
+  "userHelp": {
+    "displayName": "LaTeX viewer",
+    "introduction": "The custom `<tp-latex-viewer>` element presents editable LaTeX examples with rendered and generated HTML views.",
+    "interactions": "#### Mouse interactions\n\n| Control or gesture | Result |\n| --- | --- |\n| Show code | Show or hide the editable LaTeX source. |\n| Show output | Show or hide the output. |\n| Example | Select a document from the loaded examples. |\n| Rendered HTML | Display the rendered document. |\n| Generated HTML | Display the generated HTML as read-only code. |\n| Toggle editor toolbar | Show or hide the editor toolbar. |\n| Reset | Restore the selected example's initial source. |\n| Run | Render the current source. |\n| Fullscreen / Exit fullscreen | Expand the entire component to fullscreen or return to its normal size. |\n\n#### Keyboard interactions\n\n| Key or gesture | Result |\n| --- | --- |\n| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Move between controls. |\n| <kbd>Enter</kbd> / <kbd>Space</kbd> | Activate a focused button. |\n| <kbd>Ctrl</kbd>+<kbd>?</kbd> | Open help for the component under the pointer, falling back to the focused component. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>?</kbd> | Choose a component from the hierarchy and open its help. Include <kbd>Shift</kbd> if needed to type <kbd>?</kbd>. |\n| <kbd>Esc</kbd> | Exit fullscreen. |",
+    "keyboard": []
+  }
+}

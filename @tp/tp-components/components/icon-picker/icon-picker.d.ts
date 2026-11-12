@@ -25,23 +25,23 @@ import "../radio-list/radio-list.js";
  */
 export type TpIconPickerCopyFormat = "name" | "svg" | "tp-icon" | "tp-icon-button" | "img";
 /**
- * `<tp-icon-picker>` lists predefined icons and lets users pick one.
+ * The custom `<tp-icon-picker>` element browses and selects icons from the available libraries.
  *
  * The component stays in Light DOM and dispatches `tp-icon-picker-select`
  * when an item is clicked. Clicking also copies the representation selected
  * with `copy` to the clipboard when the Clipboard API is available.
  *
- * @summary Picker for predefined icons.
+ * @summary Browses and selects icons from the available libraries.
  * @tagname tp-icon-picker
  * @attr {string} filter = "" - Free-text filter applied to icon names/libraries.
  * @attr {string} library = "all" - Active library filter (`all` by default).
  * @attr {'name'|'svg'|'tp-icon'|'tp-icon-button'|'img'} copy = "name" - Clipboard output format (`name` by default).
  * @attr {boolean} compact = false - Shows only the title, filters, and a compact 2em icon grid.
-
-
+ *
+ *
  * @example
  * <tp-icon-picker></tp-icon-picker>
- * @event tp-icon-picker-select Emitted when a icon is selected. The detail contains the selection metadata and requested clipboard text; this event does not confirm clipboard success.
+ *  @event tp-icon-picker-select Emitted when a icon is selected. The detail contains the selection metadata and requested clipboard text; this event does not confirm clipboard success.
  * @eventdetail tp-icon-picker-select { name: string; library: string; sourcePath: string; format: TpIconPickerCopyFormat; value: string }
  * @event tp-icon-picker-copy-error Emitted when copying the selected icon fails. The detail contains the requested clipboard text, selection metadata and the caught error.
  * @eventdetail tp-icon-picker-copy-error { name: string; library: string; format: TpIconPickerCopyFormat; value: string; error: unknown }

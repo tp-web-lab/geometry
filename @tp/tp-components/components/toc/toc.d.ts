@@ -6,9 +6,9 @@ import "../tree/tree.js";
 import { TpBase } from "../base/base.js";
 type TpTocPosition = "start" | "end" | "center";
 /**
- * `<tp-toc>` renders the current page table of contents as a `<tp-tree>`.
+ * The custom `<tp-toc>` element provides a table of contents generated from page headings.
  *
- * @summary Table of contents generated from page headings.
+ * @summary Provides a table of contents generated from page headings.
  * @tagname tp-toc
  * @attr {string} label = "Contents" - Visible summary label.
  * @attr {string} position = "center" - Placement (`start`, `end`, `center`).
@@ -16,14 +16,14 @@ type TpTocPosition = "start" | "end" | "center";
  * @attr {boolean} expand-all = false - Expands every table of contents subtree.
  * @attr {boolean} brand = false - Uses the soft brand background and contrasting brand text colors.
  * @example
- * <tp-box data-tp-toc-scope>
- *   <tp-toc label="On this page" open expand-all></tp-toc>
+ * <tp-box data-tp-toc-scope="">
+ *   <tp-toc label="On this page" open="" expand-all=""></tp-toc>
  *   <h2>Getting started</h2>
  *   <p>Choose a heading in the table of contents to jump to its section.</p>
  *   <h3>Installation</h3><p>Install the library in your project.</p>
  *   <h3>First component</h3><p>Add your first interactive component.</p>
  * </tp-box>
- * @cssprop [--tp-toc-background=color-mix(in srgb, Canvas 94%, CanvasText 6%)] Panel background color.
+ *  @cssprop [--tp-toc-background=color-mix(in srgb, Canvas 94%, CanvasText 6%)] Panel background color.
  * @cssprop [--tp-toc-border-color=color-mix(in srgb, CanvasText 12%, transparent)] Panel border color.
  * @cssprop [--tp-toc-color=inherit] Panel text color.
  */

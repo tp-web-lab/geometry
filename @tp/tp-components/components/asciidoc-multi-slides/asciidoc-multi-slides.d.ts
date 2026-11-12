@@ -9,10 +9,12 @@
 import type { TpMarkupMultiPagesLanguage } from "../markup-multi-pages/markup-multi-pages.js";
 import { TpMarkupMultiSlides } from "../markup-multi-slides/markup-multi-slides.js";
 /**
+ * The custom `<tp-asciidoc-multi-slides>` element presents AsciiDoc documents as a slide deck.
+ *
  * @tagname tp-asciidoc-multi-slides
- * @summary presents a navigable repository of AsciiDoc slides.
+ * @summary Presents AsciiDoc documents as a slide deck.
  * @example
- * <tp-asciidoc-multi-slides></tp-asciidoc-multi-slides>
+ * <tp-asciidoc-multi-slides repository="/docs/components/asciidoc-multi-pages/docs"></tp-asciidoc-multi-slides>
  */
 export declare class TpAsciidocMultiSlides extends TpMarkupMultiSlides {
     protected get fixedLanguage(): TpMarkupMultiPagesLanguage;

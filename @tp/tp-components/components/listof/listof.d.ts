@@ -19,7 +19,9 @@ import "../biblio/biblio.js";
 import "../glossary/glossary.js";
 import { TpBase } from "../base/base.js";
 /**
- * @summary Collects reference content or links to labelled elements matching a CSS selector.
+ * The custom `<tp-listof>` element builds a list of reference entries or links to labelled document elements.
+ *
+ * @summary Builds a list of reference entries or links to labelled document elements.
  * @tagname tp-listof
  * @attr {string} selector = "" - CSS selector for reference definitions or elements with a title, label or caption.
  * @keyboard {Enter} Follows the focused list link.
@@ -29,7 +31,7 @@ import { TpBase } from "../base/base.js";
  *   <figure><p>A diagram of the water cycle.</p><figcaption>The water cycle</figcaption></figure>
  *   <figure><p>A diagram of a food chain.</p><figcaption>A food chain</figcaption></figure>
  * </div>
- * @accessibility Renders notes as a native ordered list, bibliography and glossary entries as description lists, and other matched elements as labelled anchor links in an unordered list.
+ *  @accessibility Renders notes as a native ordered list, bibliography and glossary entries as description lists, and other matched elements as labelled anchor links in an unordered list.
  * @accessibility Generated links retain native keyboard activation; an empty generated list is hidden.
  * @accessibilityresponsibility Choose a selector that identifies meaningful targets and supply descriptive target labels. Ensure copied definition content, links and media are accessible in the generated list.
  */

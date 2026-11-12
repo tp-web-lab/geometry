@@ -91,18 +91,18 @@ import type { TpPlaygroundProjectMetadata } from "../playground/playground-proje
 import { TpPrologProject } from "./prolog-project.js";
 export { TpPrologProject } from "./prolog-project.js";
 /**
- * Prolog playground component.
+ * The custom `<tp-prolog-playground>` element edits and runs Prolog projects.
  *
  * Provides a file-based playground that executes Prolog in the browser with Scryer Prolog.
  *
- * @summary Edits and runs a Prolog project with Scryer Prolog.
+ * @summary Edits and runs Prolog projects.
  * @tagname tp-prolog-playground
  *
  * @attr {string} repository = "" - Directory containing a Prolog playground project to load at initialization.
  * @attr {string} src = "" - JSON project or prolog source file to load.
  *
  * @example
- * <tp-prolog-playground></tp-prolog-playground>
+ * <tp-prolog-playground src="/docs/components/_shared/intro-projects/prolog.json"></tp-prolog-playground>
  */
 export declare class TpPrologPlayground extends TpPlayground<TpPrologProject> {
     protected get supportsTestExecution(): boolean;

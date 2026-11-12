@@ -27,7 +27,7 @@ export interface TpContextmenuSelectDetail {
     label: string;
 }
 /**
- * `<tp-contextmenu>` affiche un menu contextuel positionné à l’écran.
+ * The custom `<tp-contextmenu>` element opens a menu of actions at the pointer position.
  *
  * Le composant :
  * - peut être lié à un élément d’ancrage via `anchor`
@@ -60,15 +60,15 @@ export interface TpContextmenuSelectDetail {
  * - `anchor`
  * - `open`
  *
- * @summary Affiche un menu contextuel accessible et réutilisable.
+ * @summary Opens a menu of actions at the pointer position.
  * @tagname tp-contextmenu
  *
  * @attr {string} anchor = "" - CSS selector of the element whose context-menu action opens this menu.
  * @attr {boolean} open = false - Shows the context menu when present; removing it closes the menu.
  *
  *
-
-
+ *
+ *
  *
  * @cssprop --tp-contextmenu-background Background color of the menu and submenus.
  * @cssprop --tp-contextmenu-foreground Text color of the menu.
@@ -84,15 +84,13 @@ export interface TpContextmenuSelectDetail {
  * @cssprop --tp-contextmenu-item-padding-inline Inline padding for menu items.
  * @cssprop --tp-contextmenu-z-index Stacking level of the context menu.
  * @example
- * <tp-button id="intro-contextmenu-trigger" data-demo-trigger>Right-click this button</tp-button>
- * <tp-contextmenu anchor="#intro-contextmenu-trigger" outside-click>
- * <ul>
- * <li>Item 1</li>
- * <li>Item 2</li>
- * <li>Item 3</li>
- * </ul>
- * </tp-contextmenu>
- * @event tp-contextmenu-select Emitted when a terminal menu item with data-action is activated. The detail contains its action identifier, li element and visible label.
+ * <tp-box data-intro-action="contextmenu" data-allow-script="">
+ *   <tp-button id="intro-contextmenu-trigger" data-demo-trigger="">Right-click this button</tp-button>
+ *   <tp-contextmenu anchor="#intro-contextmenu-trigger" outside-click=""><ul><li><a href="/#/components/button/index.md">Buttons</a></li><li><a href="/#/components/tree/index.md">Trees</a></li></ul></tp-contextmenu>
+ *   <p data-demo-status="" role="status">Try the contextmenu using its trigger.</p>
+ *   <script src="/docs/components/_shared/introduction-actions.js"></script>
+ * </tp-box>
+ *  @event tp-contextmenu-select Emitted when a terminal menu item with data-action is activated. The detail contains its action identifier, li element and visible label.
  * @eventdetail tp-contextmenu-select { action: string; item: HTMLLIElement; label: string }
  */
 export declare class TpContextmenu extends TpBase {

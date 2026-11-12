@@ -5,7 +5,7 @@
 import "../icon-button/icon-button.js";
 import { TpBase } from "../base/base.js";
 /**
- * Displays a two-sided card that can be flipped.
+ * The custom `<tp-flip-card>` element displays a two-sided card.
  *
  * @summary Displays a two-sided card.
  * @tagname tp-flip-card
@@ -13,7 +13,7 @@ import { TpBase } from "../base/base.js";
  * @attr {boolean} fit-content = false - Adapts the card dimensions to its verso content.
  * @attr {boolean} flipped = false - Shows the verso when present.
  * @attr {string} button-position = "bottom end" - Position of the overlaid flip button, or none to hide it.
-
+ *
  * @cssprop --tp-flip-card-aspect-ratio Card aspect ratio.
  * @cssprop --tp-flip-card-background Card face background.
  * @cssprop --tp-flip-card-border-color Card border color.
@@ -22,8 +22,13 @@ import { TpBase } from "../base/base.js";
  * @cssprop --tp-flip-card-padding Card face padding.
  * @cssprop --tp-flip-card-width Card width.
  * @example
- * <tp-flip-card></tp-flip-card>
- * @event tp-flip-card-change Emitted when the visible side changes; flipped is true when the back face is visible.
+ * <tp-flip-card>
+ * <dl>
+ *   <dt>recto</dt><dd><p>This is the content <strong>recto...</strong></p></dd>
+ *   <dt>verso</dt><dd><p>...and here is the content <strong>verso.</strong></p></dd>
+ * </dl>
+ * </tp-flip-card>
+ *  @event tp-flip-card-change Emitted when the visible side changes; flipped is true when the back face is visible.
  * @eventdetail tp-flip-card-change { flipped: boolean }
  */
 export declare class TpFlipCard extends TpBase {

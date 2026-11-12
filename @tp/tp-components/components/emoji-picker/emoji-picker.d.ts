@@ -37,20 +37,19 @@ export declare function getEmojiMetadata(item: TpEmojiPickerItem): TpEmojiPicker
  */
 export declare function parseEmojiTestData(source: string): TpEmojiPickerItem[];
 /**
- * `<tp-emoji-picker>` browses and copies the RGI emoji defined by Unicode
- * Emoji 17.0. Names and group order come from the official test data.
+ * The custom `<tp-emoji-picker>` element lets readers browse and select Unicode emoji.
  *
- * @summary Unicode Emoji 17.0 picker.
+ * @summary Lets readers browse and select Unicode emoji.
  * @tagname tp-emoji-picker
  * @attr {string} filter = "" - Free-text filter applied to emoji names and metadata.
  * @attr {string} group = "all" - Active Unicode emoji group (`all` by default).
  * @attr {string} copy = "emoji" - Clipboard format: `emoji`, `unicode`, `hexadecimal-html`, `decimal-html`, or `html-entity`.
  * @attr {boolean} compact = false - Shows only the title, filters, and a compact 2em glyph grid.
-
-
+ *
+ *
  * @example
  * <tp-emoji-picker></tp-emoji-picker>
- * @event tp-emoji-picker-select Emitted when a emoji is selected. The detail contains the selection metadata and requested clipboard text; this event does not confirm clipboard success. value is null when the selected copy format has no representation.
+ *  @event tp-emoji-picker-select Emitted when a emoji is selected. The detail contains the selection metadata and requested clipboard text; this event does not confirm clipboard success. value is null when the selected copy format has no representation.
  * @eventdetail tp-emoji-picker-select { emoji: string; name: string; group: string; subgroup: string; version: string; codepoints: string[]; copy: TpEmojiPickerCopyFormat; value: string | null }
  * @event tp-emoji-picker-copy-error Emitted when copying the selected emoji fails. The detail contains the requested clipboard text, selection metadata and the caught error.
  * @eventdetail tp-emoji-picker-copy-error { emoji: string; name: string; group: string; subgroup: string; version: string; codepoints: string[]; copy: TpEmojiPickerCopyFormat; value: string; error: unknown }

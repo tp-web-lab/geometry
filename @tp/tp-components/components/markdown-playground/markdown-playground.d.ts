@@ -86,7 +86,7 @@ import type { TpExampleProjectMetadata } from "../playground/playground-example-
 import { TpMarkdownProject } from "./markdown-project.js";
 export { type TpMarkdownExtension, TpMarkdownProject, } from "./markdown-project.js";
 /**
- * Markdown playground component.
+ * The custom `<tp-markdown-playground>` element edits and renders a Markdown project.
  *
  * Provides a file-based playground that renders Markdown documents in the browser.
  *
@@ -97,7 +97,7 @@ export { type TpMarkdownExtension, TpMarkdownProject, } from "./markdown-project
  * @attr {string} src = "" - JSON project or markdown source file to load.
  *
  * @example
- * <tp-markdown-playground></tp-markdown-playground>
+ * <tp-markdown-playground src="/docs/components/_shared/intro-projects/markdown.json"></tp-markdown-playground>
  */
 export declare class TpMarkdownPlayground extends TpPlayground<TpMarkdownProject> {
     protected createEmptyProject(): TpMarkdownProject;

@@ -15,19 +15,21 @@ import { TpBase } from "../base/base.js";
  */
 type TpRadioListOrientation = "horizontal" | "vertical";
 /**
- * `<tp-radio-list>` turns a plain `<ul>` or `<ol>` into a radio list.
+ * The custom `<tp-radio-list>` element presents a list of mutually exclusive choices.
  *
- * @summary Transforms list items into grouped radio options.
+ * @summary Presents a list of mutually exclusive choices.
  * @tagname tp-radio-list
  * @attr {string} name = "" - Radio group name used on generated inputs.
  * @attr {string} orientation = "vertical" - Item layout direction (`vertical` or `horizontal`).
  * @attr {string} label = "" - Visible accessible group label; no fieldset is created.
  * @attr {string} label-position = "top" - Group label position (`top`, `bottom`, `start`, or `end`).
  * @attr {string} value = "" - 1-based index of the checked item (`""` for no selection).
-
+ *
  * @example
- * <tp-radio-list></tp-radio-list>
- * @cssprop [--tp-radio-list-marker-gap=0.5em] Horizontal space between each selection marker and its item content.
+ * <tp-radio-list name="theme" value="2" orientation="horizontal">
+ *     <ul><li>Light</li><li>Automatic</li><li>Dark</li></ul>
+ *   </tp-radio-list>
+ *  @cssprop [--tp-radio-list-marker-gap=0.5em] Horizontal space between each selection marker and its item content.
  * @cssprop [--tp-radio-list-marker-width=2ch] Width reserved for each selection marker; aligns the item content in both orientations.
  * @event tp-radio-list-change Emitted after a selection change. value is the selected 1-based item index as a string; label is its visible label. Both are empty when nothing is selected.
  * @eventdetail tp-radio-list-change { value: string; label: string }

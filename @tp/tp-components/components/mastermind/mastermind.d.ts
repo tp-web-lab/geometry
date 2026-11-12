@@ -2,28 +2,12 @@
  * @module components/mastermind
  * @summary Interactive Mastermind game component.
  */
-/**
- * @tp-dependency tp-base
- * @summary Shared base class for tp-* components.
- */
-/**
- * @tp-dependency tp-chronometer
- * @summary Chronometer component with play, pause and stop controls.
- */
-/**
- * @tp-dependency tp-dropdown
- * @summary Dropdown menu component.
- */
-/**
- * @tp-dependency tp-icon-button
- * @summary Accessible icon button component.
- */
 import { TpBase } from "../base/base.js";
 import "../chronometer/chronometer.js";
 import "../dropdown/dropdown.js";
 import "../icon-button/icon-button.js";
 /**
- * Displays an interactive Mastermind game.
+ * The custom `<tp-mastermind>` element displays an interactive Mastermind game.
  *
  * @summary Displays an interactive Mastermind game.
  * @tagname tp-mastermind
@@ -33,7 +17,7 @@ import "../icon-button/icon-button.js";
  * @attr {number} attempts = 10 - Maximum number of guesses.
  *
  * @example
- * <tp-mastermind></tp-mastermind>
+ * <tp-mastermind solution="red blue green yellow" attempts="8"></tp-mastermind>
  */
 export declare class TpMastermind extends TpBase {
     private static readonly styleId;

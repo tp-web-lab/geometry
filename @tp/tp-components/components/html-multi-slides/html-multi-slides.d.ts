@@ -9,10 +9,12 @@
 import type { TpMarkupMultiPagesLanguage } from "../markup-multi-pages/markup-multi-pages.js";
 import { TpMarkupMultiSlides } from "../markup-multi-slides/markup-multi-slides.js";
 /**
+ * The custom `<tp-html-multi-slides>` element presents HTML documents as a slide deck.
+ *
  * @tagname tp-html-multi-slides
- * @summary presents a navigable repository of native HTML slides.
+ * @summary Presents HTML documents as a slide deck.
  * @example
- * <tp-html-multi-slides></tp-html-multi-slides>
+ * <tp-html-multi-slides repository="/docs/components/html-multi-pages/docs"></tp-html-multi-slides>
  */
 export declare class TpHtmlMultiSlides extends TpMarkupMultiSlides {
     protected get fixedLanguage(): TpMarkupMultiPagesLanguage;

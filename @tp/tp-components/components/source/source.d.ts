@@ -5,13 +5,16 @@
 import "../icon-button/icon-button.js";
 import { TpBase } from "../base/base.js";
 /**
- * `<tp-source>` displays a source repository button when a URL is available.
+ * The custom `<tp-source>` element links to the project’s source repository.
  *
- * @summary Source repository link button.
+ * @summary Links to the project’s source repository.
  * @tagname tp-source
  * @attr {string} url = "" - Source repository URL.
  * @example
- * <tp-source></tp-source>
+ * <tp-box>
+ *   <p>Open the source repository for this library.</p>
+ *   <tp-source url="https://github.com/tp-web-lab/tp-components"></tp-source>
+ * </tp-box>
  */
 export declare class TpSource extends TpBase {
     static get observedAttributes(): string[];

@@ -231677,7 +231677,7 @@ function protectMarkdownRawTextElements(source) {
 			output.push(line);
 			continue;
 		}
-		const tag = (fence === null ? line.match(/^ {0,3}<(script|style|textarea|template)\b/i) : null)?.[1]?.toLowerCase();
+		const tag = (fence === null ? line.match(/^ {0,3}(?:<[a-z][\w:-]*\b(?:[^>"']|"[^"]*"|'[^']*')*>\s*)*?<(script|style|textarea|template)\b/i) : null)?.[1]?.toLowerCase();
 		if (tag === void 0) {
 			output.push(line);
 			continue;

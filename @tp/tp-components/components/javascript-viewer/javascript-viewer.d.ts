@@ -10,7 +10,7 @@
 import "../javascript-playground/javascript-playground.js";
 import { TpJavascriptPlayground } from "../javascript-playground/javascript-playground.js";
 /**
- * Compact viewer for editing and running one JavaScript example.
+ * The custom `<tp-javascript-viewer>` element displays and runs one JavaScript example in a compact interface.
  *
  * @tagname tp-javascript-viewer
  * @summary Displays and runs one JavaScript example in a compact interface.
@@ -21,7 +21,7 @@ import { TpJavascriptPlayground } from "../javascript-playground/javascript-play
  * @event tp-playground-repository-load Emitted after a project configured with `repository` has loaded.
  * @eventdetail tp-playground-repository-load { repository: string; project: TpProject }
  * @example
- * <tp-javascript-viewer></tp-javascript-viewer>
+ * <tp-javascript-viewer src="/docs/components/_shared/intro-projects/javascript.json"></tp-javascript-viewer>
  */
 export declare class TpJavascriptViewer extends TpJavascriptPlayground {
     protected get viewerMode(): boolean;
